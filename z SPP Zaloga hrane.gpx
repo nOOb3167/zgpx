@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx version="1.1" creator="GPS Visualizer http://www.gpsvisualizer.com/" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<wpt lat="46.513448" lon="15.083436">
+  <name>Slovenj Gradec</name>
+  <desc>Hofer Dm Spar Intersport</desc>
+  <sym>http://maps.me/placemarks/placemark-red.png</sym>
+</wpt>
+<wpt lat="46.419339" lon="14.693875">
+  <name>Mercator</name>
+  <desc>Semi-small shop</desc>
+  <sym>http://maps.me/placemarks/placemark-red.png</sym>
+</wpt>
+<wpt lat="46.39348" lon="14.498264">
+  <name>Mercator</name>
+  <desc>Small shop</desc>
+  <sym>http://maps.me/placemarks/placemark-red.png</sym>
+</wpt>
+<wpt lat="46.358392" lon="14.298768">
+  <time>2018-09-20T21:41:25Z</time>
+  <name>Hofer - Tržič</name>
+  <sym>http://maps.me/placemarks/placemark-red.png</sym>
+</wpt>
+<wpt lat="46.357808" lon="14.29792">
+  <time>2018-09-20T21:41:29Z</time>
+  <name>Spar</name>
+  <sym>http://maps.me/placemarks/placemark-red.png</sym>
+</wpt>
+<wpt lat="46.359482" lon="14.301406">
+  <time>2018-09-20T21:41:32Z</time>
+  <name>Mercator</name>
+  <sym>http://maps.me/placemarks/placemark-red.png</sym>
+</wpt>
+<wpt lat="46.460848" lon="13.938742">
+  <name>Mercator</name>
+  <desc>Open:  Monday-Friday 7.00-19.00 Saturday 7.00-17.00 Sunday 8.00-13.00</desc>
+  <sym>http://maps.me/placemarks/placemark-red.png</sym>
+</wpt>
+<wpt lat="46.380462" lon="13.750909">
+  <time>2018-09-20T21:43:01Z</time>
+  <name>Trgovina</name>
+  <sym>http://maps.me/placemarks/placemark-red.png</sym>
+</wpt>
+<wpt lat="46.018471" lon="14.029027">
+  <time>2018-09-20T21:45:50Z</time>
+  <name>Hofer - Idrija</name>
+  <sym>http://maps.me/placemarks/placemark-red.png</sym>
+</wpt>
+<wpt lat="45.881383" lon="14.002156">
+  <name>Fama shop</name>
+  <sym>http://maps.me/placemarks/placemark-red.png</sym>
+</wpt>
+<wpt lat="45.720658" lon="14.038622">
+  <name>Tuš</name>
+  <sym>http://maps.me/placemarks/placemark-red.png</sym>
+</wpt>
+<wpt lat="46.213952" lon="13.972276">
+  <time>2018-09-22T12:05:57Z</time>
+  <name>Mercator</name>
+  <desc>Open:  Monday-Friday 8.00-18.00 Saturday 8.00-12.00 Sunday closed</desc>
+  <sym>http://maps.me/placemarks/placemark-red.png</sym>
+</wpt>
+<wpt lat="46.407673" lon="14.701416">
+  <time>2018-10-28T09:46:49Z</time>
+  <name>Dodatna zaloga</name>
+  <sym>http://maps.me/placemarks/placemark-red.png</sym>
+</wpt>
+<wpt lat="46.433197" lon="13.743345">
+  <time>2018-10-28T09:47:24Z</time>
+  <name>Dodatna zaloga</name>
+  <sym>http://maps.me/placemarks/placemark-red.png</sym>
+</wpt>
+<wpt lat="46.213924" lon="13.999122">
+  <time>2018-10-28T09:48:08Z</time>
+  <name>Dodatna zaloga</name>
+  <sym>http://maps.me/placemarks/placemark-red.png</sym>
+</wpt>
+</gpx>

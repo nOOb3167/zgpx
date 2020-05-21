@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<gpx version="1.1" creator="GPS Visualizer http://www.gpsvisualizer.com/" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<wpt lat="46.40177" lon="13.801117">
+  <name>Pogačnikov dom</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.409284" lon="13.7253">
+  <name>Soca</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.391075" lon="13.835031">
+  <time>2018-02-14T16:34:44Z</time>
+  <name>Izvir Bistrice</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.439274" lon="13.893951">
+  <time>2018-02-14T16:34:58Z</time>
+  <name>Peričnik</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.388679" lon="14.47904">
+  <time>2018-02-14T16:35:26Z</time>
+  <name>Kokra</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.368706" lon="14.663947">
+  <time>2018-02-14T16:36:00Z</time>
+  <name>Waterfall</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.348729" lon="14.373242">
+  <name>Mala poljana</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.342331" lon="14.41319">
+  <name>Izvir pod Baseljskim prevalom</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.481695" lon="15.447403">
+  <time>2018-03-11T11:25:56Z</time>
+  <name>Forest</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.288726" lon="13.696037">
+  <name>Pitna voda Koča pri Krnskih jezerih</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.359916" lon="13.795766">
+  <name>Izvir na Prehodavcih</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.375494" lon="13.799767">
+  <name>Zadnjica</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="45.613339" lon="14.027743">
+  <time>2018-03-11T14:04:26Z</time>
+  <name>Drinking Water</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="45.561507" lon="13.835045">
+  <time>2018-03-11T14:40:04Z</time>
+  <name>Drinking Water</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="45.94672" lon="13.869905">
+  <name>Drinking Water</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="45.613339" lon="14.027743">
+  <time>2018-06-03T17:02:45Z</time>
+  <name>Drinking Water</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.468804" lon="13.960021">
+  <time>2018-06-08T11:34:32Z</time>
+  <name>Street</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.36796" lon="13.792913">
+  <time>2018-06-08T11:35:53Z</time>
+  <name>Spring</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.503029" lon="15.211458">
+  <name>Okrepcevalnica Zajc</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.406769" lon="14.701302">
+  <time>2018-07-10T21:13:15Z</time>
+  <name>natural-scrub</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.4951" lon="15.508301">
+  <name>Ruška koča</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.501621" lon="15.555321">
+  <time>2018-07-22T20:20:01Z</time>
+  <name>Mariborska koča</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.466494" lon="15.343055">
+  <time>2018-07-22T20:20:56Z</time>
+  <name>Forest</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.465192" lon="15.337032">
+  <time>2018-07-22T20:21:12Z</time>
+  <name>Forest</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.528259" lon="15.128997">
+  <time>2018-07-22T20:22:33Z</time>
+  <name>Unknown Place</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.500349" lon="15.027496">
+  <time>2018-07-22T20:22:51Z</time>
+  <name>Sveti Rok</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.496017" lon="15.012236">
+  <time>2018-07-22T20:23:11Z</time>
+  <name>Forest</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.438182" lon="14.964271">
+  <time>2018-07-22T20:23:24Z</time>
+  <name>Andrejev dom na Slemenu</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.413302" lon="14.900257">
+  <time>2018-07-22T20:23:33Z</time>
+  <name>Dom na Smrekovcu</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.414532" lon="14.807375">
+  <time>2018-07-22T20:23:48Z</time>
+  <name>landuse-meadow</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.423461" lon="14.743187">
+  <time>2018-07-22T20:24:03Z</time>
+  <name>Koča v Grohatu pod Raduho</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.507406" lon="15.076497">
+  <name>Kafič</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.497702" lon="15.255782">
+  <time>2018-07-22T20:26:02Z</time>
+  <name>landuse-meadow</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.369488" lon="14.587542">
+  <name>Okrešelj pitna voda</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.370555" lon="14.54959">
+  <name>Koča na Ledinah pitna voda</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.386582" lon="14.67953">
+  <time>2018-07-28T13:44:58Z</time>
+  <name>landuse-meadow</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.376491" lon="14.666192">
+  <time>2018-07-28T13:45:10Z</time>
+  <name>Tourist Information</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.36982" lon="14.53593">
+  <time>2018-07-28T13:45:28Z</time>
+  <name>Češka koča na Spodnjih Ravneh</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.350089" lon="14.41908">
+  <time>2018-07-28T13:45:43Z</time>
+  <name>Praprotnikova koča</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.365752" lon="14.428496">
+  <name>River</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.359308" lon="14.389841">
+  <time>2018-07-28T13:46:00Z</time>
+  <name>Dom pod Stroržičem</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.429009" lon="14.233624">
+  <time>2018-07-28T13:46:23Z</time>
+  <name>Dom na Zelenici</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.025546" lon="13.902451">
+  <time>2018-08-11T10:52:03Z</time>
+  <name>Bar</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="45.975793" lon="13.853836">
+  <name>Iztokova koča pod Golaki</name>
+  <desc>Hubeljska voda</desc>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="45.881053" lon="14.002305">
+  <time>2018-08-11T10:53:02Z</time>
+  <name>Bar 10</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="45.819133" lon="14.01898">
+  <time>2018-08-11T10:53:38Z</time>
+  <name>Turistična kmetija Abram</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="45.719967" lon="14.038724">
+  <time>2018-08-11T10:54:07Z</time>
+  <name>Bar Šturm</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="45.663218" lon="13.989135">
+  <time>2018-08-11T10:54:24Z</time>
+  <name>Škocjanske jame</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="45.574792" lon="13.907217">
+  <name>Pipa</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="45.570496" lon="13.856907">
+  <time>2018-08-11T10:55:39Z</time>
+  <name>Kmetija Vovk</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="45.569635" lon="13.791583">
+  <name>Pipa</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="45.98733" lon="13.995808">
+  <time>2018-08-11T10:57:13Z</time>
+  <name>Koča na Hleviški planini</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.05786" lon="14.054576">
+  <name>Koča LPP</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.109415" lon="14.052982">
+  <time>2018-08-11T10:59:11Z</time>
+  <name>Planinska koča na Ermanovcu</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.150497" lon="14.026734">
+  <time>2018-08-11T10:59:24Z</time>
+  <name>Tourist Information</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.215763" lon="13.999492">
+  <time>2018-08-11T10:59:37Z</time>
+  <name>Planinski dom Petrovo brdo</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.238794" lon="13.762429">
+  <name>Korito z vodo na planini</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.432735" lon="13.744593">
+  <time>2018-08-11T11:01:32Z</time>
+  <name>Tičarjev dom</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.416457" lon="13.783809">
+  <time>2018-08-11T11:01:50Z</time>
+  <name>Spring</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.409011" lon="13.843415">
+  <time>2018-08-11T11:02:06Z</time>
+  <name>Aljažev dom v Vratih</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.359884" lon="14.30097">
+  <name>Lokal</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.382263" lon="13.759785">
+  <time>2018-08-11T11:15:00Z</time>
+  <name>Parking</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="45.589562" lon="13.860775">
+  <time>2018-09-08T19:15:35Z</time>
+  <name>Restavracija</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="45.90815" lon="13.935621">
+  <time>2018-09-08T19:18:56Z</time>
+  <name>Koča na Sinjem Vrhu</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.361706" lon="14.283644">
+  <time>2018-09-08T19:21:58Z</time>
+  <name>Unknown Place</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.355751" lon="14.639935">
+  <time>2018-09-08T19:23:10Z</time>
+  <name>Tourist Information</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="45.999676" lon="14.022528">
+  <time>2018-09-08T19:27:13Z</time>
+  <name>Guesthouse Barbara</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.430029" lon="14.218391">
+  <time>2018-10-28T09:43:34Z</time>
+  <name>Dom pri izviru Završnice</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+<wpt lat="46.318732" lon="13.779058">
+  <time>2018-10-28T09:44:35Z</time>
+  <name>Koča pri Triglavskih jezerih</name>
+  <sym>http://maps.me/placemarks/placemark-blue.png</sym>
+</wpt>
+</gpx>
