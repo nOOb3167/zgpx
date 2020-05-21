@@ -193,7 +193,7 @@ def chk_waypoints(gpx: GPX, want_dist_m=2000):
         def waypointat(self):
             vS, vE = mkvec(self.segS), mkvec(self.segE)
             vQ = vec_scale(vec_minus(vE, vS), self.pos / self._dist_seg)
-            return GPXWaypoint(latitude=vS[0]+vQ[0], longitude=vS[1]+vQ[1])
+            return GPXWaypoint(latitude=vS[0]+vQ[0], longitude=vS[1]+vQ[1], symbol='http://maps.me/placemarks/placemark-green.png', type='checkpoint')
     wpt: List[GPXWaypoint] = []
     remain = None
     def remain_reset():
@@ -231,6 +231,7 @@ with open(root.joinpath('zzz_generated.gpx'), 'w', encoding='UTF-8') as f:
 
 with open(root.joinpath('Slovenska_Planinska_Pot_Formatted.gpx'), encoding='UTF-8') as f:
     gp2 = gpxpy.parse(f)
+    gp2.waypoints.extend(koce_waypoints())
     gp2.waypoints.extend(chk_waypoints(gp2))
     xm2 = gp2.to_xml()
     with open(root.joinpath('zzz_generated_2.gpx'), 'w', encoding='UTF-8') as f2:
