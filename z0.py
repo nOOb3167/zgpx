@@ -1,4 +1,5 @@
 from csv import DictReader, register_dialect
+from dataclasses import dataclass
 from math import floor, inf, sqrt
 from pathlib import Path
 from typing import Callable, List, Tuple, Union
@@ -7,7 +8,7 @@ import gpxpy
 from gpxpy.gpx import (GPX, GPXTrack, GPXTrackPoint, GPXTrackSegment,
                        GPXWaypoint, NearestLocationData)
 
-from z1 import chk_waypoints, gpx_insert_lseg_closest_inplace, mkpt
+from z1 import chk_waypoints, gpx_insert_lseg_closest_inplace, mkpt, Pos, tra_seg, vec_t
 
 assert mkpt('46.5017784 15.5537548').latitude == GPXTrackPoint(46.5017784, 15.5537548).latitude and \
     mkpt('46.5017784 15.5537548').longitude == GPXTrackPoint(46.5017784, 15.5537548).longitude
@@ -86,7 +87,34 @@ def n3():
 
         gp2 = gpxpy.parse(f)
         gp2.waypoints.extend(kwp)
-        gp2.waypoints.extend(chk_waypoints(gp2))
 
-        gpx_insert_lseg_closest_inplace()
+        @dataclass
+        class D():
+            vec: vec_t
+            idx: int
+            tra_idx: int
+        def wf(pos: Pos, vec: vec_t):
+            return D(vec, pos.idx, pos.tra_idx)
+
+        chk_: List[D] = chk_waypoints(gp2, way_fact=wf)
+        chk = sorted(chk_, key=lambda x: (x.tra_idx, x.idx,), reverse=True)
+        for d in chk:
+            tra = gp2.tracks[d.tra_idx]
+            seg = tra_seg(tra)
+            seg.points.insert(d.idx + 1, GPXTrackPoint(d.vec[0], d.vec[1], name='dummy_breaker'))
+
+        for d in chk:
+            gp2.waypoints.append(GPXWaypoint(d.vec[0], d.vec[1], symbol='http://maps.me/placemarks/placemark-yellow.png'))
+
+    with open(root.joinpath('zzz_generated_3.gpx'), 'w', encoding='UTF-8') as f2:
+        xm2 = gp2.to_xml()
+        f2.write(xm2)
+
+        # for d in chk:
+        #     tra = gp2.tracks[d.tra_idx]
+        #     seg = tra_seg(tra)
+
+        # gp2.waypoints.extend()
+
+        # gpx_insert_lseg_closest_inplace()
 n3()

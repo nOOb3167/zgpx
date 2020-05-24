@@ -1,11 +1,13 @@
 from math import sqrt
-from typing import Callable, List, Tuple, Union
 
 from gpxpy.gpx import (GPX, GPXTrack, GPXTrackPoint, GPXTrackSegment,
                        GPXWaypoint)
+from typing import Any, Callable, List, Tuple, Union
 
 wpt_t = Union[GPXWaypoint, GPXTrackPoint]
 vec_t = Union[wpt_t, list, tuple]
+
+wpt_t_default = lambda p,v: GPXWaypoint(v[0], v[1], symbol='http://maps.me/placemarks/placemark-green.png', type='checkpoint')
 
 '''
 https://github.com/stesalati/TrackAnalyser/blob/master/bombo.py#L1047
@@ -23,7 +25,10 @@ def dd2dms(deg):
     sd = (md - m) * 60
     return [d, m, sd]
 
-def vec_minus(a: List, b: List):
+def vec_add(a: List, b: List):
+    return [a[0] + b[0], a[1] + b[1]]
+
+def vec_sub(a: List, b: List):
     return [a[0] - b[0], a[1] - b[1]]
 
 def vec_len(a: List):
@@ -79,30 +84,32 @@ def gpx_insert_lseg_closest_inplace(gpx: GPX, pnt: GPXTrackPoint):
 def pnt_lineseg_dist(pt_, segS_, segE_):
     """https://onlinemschool.com/math/assistance/vector/projection/"""
     pt, segS, segE = mkvec(pt_), mkvec(segS_), mkvec(segE_)
-    a = vec_minus(pt, segS)
-    b = vec_minus(segE, segS)
+    a = vec_sub(pt, segS)
+    b = vec_sub(segE, segS)
     a_dot_b = vec_dot(a, b)
     b_len = vec_len(b)
     a_proj_b__magnitude = a_dot_b / b_len
 
     if a_proj_b__magnitude < 0.0:
-        return vec_len(vec_minus(pt, segS))
+        return vec_len(vec_sub(pt, segS))
     elif a_proj_b__magnitude > b_len:
-        return vec_len(vec_minus(pt, segE))
+        return vec_len(vec_sub(pt, segE))
     else:
         b_unit = vec_unit(b)
-        return vec_len(vec_minus(pt, vec_scale(b_unit, a_proj_b__magnitude)))
+        return vec_len(vec_sub(pt, vec_scale(b_unit, a_proj_b__magnitude)))
 
-class Pos:
+class Pos():
     tra: GPXTrack
+    tra_idx: int
     idx: int
     segS: GPXTrackPoint
     segE: GPXTrackPoint
     _dist_seg: float
     pos: float
-    def __init__(self, tra):
-        assert len(tra_seg(tra).points) > 2
-        self.tra = tra
+    def __init__(self, trl: List[GPXTrack], tra_idx: int):
+        assert len(tra_seg(trl[tra_idx]).points) > 2
+        self.tra = trl[tra_idx]
+        self.tra_idx = tra_idx
         self.idx = -1
         self.nextidx()
     def nextidx(self):
@@ -125,23 +132,24 @@ class Pos:
         return not (self.pos < self._dist_seg)
     def atend_idxpos(self):
         return self.atend_idx() and self.atend_pos()
-    def waypointat(self):
+    def waypointat(self, way_fact):
         vS, vE = mkvec(self.segS), mkvec(self.segE)
-        vQ = vec_scale(vec_minus(vE, vS), self.pos / self._dist_seg)
-        return GPXWaypoint(latitude=vS[0]+vQ[0], longitude=vS[1]+vQ[1], symbol='http://maps.me/placemarks/placemark-green.png', type='checkpoint')
+        vQ = vec_scale(vec_sub(vE, vS), self.pos / self._dist_seg)
+        v = vec_add(vS, vQ)
+        return way_fact(self, v)
 
-def chk_waypoints(gpx: GPX, want_dist_m=2000, *, way_fact: Callable[[Pos], wpt_t]):
-    wpt: List[GPXWaypoint] = []
+def chk_waypoints(gpx: GPX, want_dist_m=2000, /, way_fact: Callable[[Pos, vec_t], Any] = wpt_t_default):
+    wpt: List[Any] = []
     remain = None
     def remain_reset():
         nonlocal remain
         remain = want_dist_m
-    for tra in gpx.tracks:
+    for tra_idx in range(len(gpx.tracks)):
         remain_reset()
-        pos = Pos(tra)
+        pos = Pos(gpx.tracks, tra_idx)
         while not pos.atend_idxpos():
             remain = pos.try_advance(remain)
             if not (remain > 0):
                 remain_reset()
-                wpt.append(pos.waypointat())
+                wpt.append(pos.waypointat(way_fact))
     return wpt
