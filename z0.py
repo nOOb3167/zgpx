@@ -108,4 +108,6 @@ def n3():
     with open(root.joinpath('zzz_generated_3.gpx'), 'w', encoding='UTF-8') as f2:
         xm2 = gp2.to_xml()
         f2.write(xm2)
-n3()
+
+if __name__ == '__main__':
+    n3()
