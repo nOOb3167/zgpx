@@ -4,6 +4,8 @@ from gpxpy.gpx import (GPX, GPXTrack, GPXTrackPoint, GPXTrackSegment,
                        GPXWaypoint)
 from typing import Any, Callable, List, Tuple, Union
 
+WANT_DIST_M_DEFAULT = 2000
+
 wpt_t = Union[GPXWaypoint, GPXTrackPoint]
 vec_t = Union[wpt_t, list, tuple]
 
@@ -138,7 +140,7 @@ class Pos():
         v = vec_add(vS, vQ)
         return way_fact(self, v)
 
-def chk_waypoints(gpx: GPX, want_dist_m=2000, /, way_fact: Callable[[Pos, vec_t], Any] = wpt_t_default):
+def chk_waypoints(gpx: GPX, want_dist_m=WANT_DIST_M_DEFAULT, /, way_fact: Callable[[Pos, vec_t], Any] = wpt_t_default):
     wpt: List[Any] = []
     remain = None
     def remain_reset():
@@ -153,3 +155,12 @@ def chk_waypoints(gpx: GPX, want_dist_m=2000, /, way_fact: Callable[[Pos, vec_t]
                 remain_reset()
                 wpt.append(pos.waypointat(way_fact))
     return wpt
+
+if __name__ == '__main__':
+    import sys
+    print(sys.argv)
+    ta = GPXTrackPoint(46.533183, 15.628635)
+    tb = GPXTrackPoint(46.523701563527474, 15.62096270039927)
+    tc = GPXTrackPoint(46.523663, 15.626323)
+    print(tc.distance_2d(ta))
+    print(tc.distance_2d(tb))
