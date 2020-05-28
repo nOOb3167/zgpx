@@ -50,29 +50,12 @@ def koce_waypoints():
     with open(root.joinpath('z0_koce.csv')) as f:
         reader = DictReader(f, dialect='kocedial')
         for r in reader:
-            acc.append(GPXWaypoint(latitude=r['latitude'], longitude=r['longitude'], name=r['name'], symbol='http://maps.me/placemarks/placemark-red.png', type='trasa'))
+            acc.append(GPXWaypoint(latitude=float(r['latitude']), longitude=float(r['longitude']), name=r['name'], symbol='http://maps.me/placemarks/placemark-red.png', type='trasa'))
     return acc
 
 def vode_waypoints():
     with open(root.joinpath('z SPP Voda.gpx'), encoding='UTF-8') as f:
         return [x for x in gpxpy.parse(f).waypoints]
-
-gpx = gpxpy.parse(frag)
-gpxt: GPXTrack = gpx.tracks[0]
-nl = gpxt.get_nearest_location(GPXTrackPoint(46.5017784, 15.5537548-0.0004))
-print(nl)
-
-gpx_insert_lseg_closest_inplace(gpx, GPXTrackPoint(46.5017784, 15.5537548-0.0004))
-
-gpx.waypoints.extend(koce_waypoints())
-gpx.waypoints.extend(vode_waypoints())
-gpx.waypoints.extend(chk_waypoints(gpx))
-
-xml = gpx.to_xml()
-
-with open(root.joinpath('zzz_generated.gpx'), 'w', encoding='UTF-8') as f:
-    f.write(xml)
-
 
 with open(root.joinpath('Slovenska_Planinska_Pot_Formatted.gpx'), encoding='UTF-8') as f:
     gp2 = gpxpy.parse(f)
@@ -91,9 +74,9 @@ def chk_waypoints_insert_inplace(gp2: GPX, wpname: str, want_dist_m=WANT_DIST_M_
     def wf(pos: Pos, vec: vec_t):
         return D(vec, pos.idx, pos.tra_idx)
 
-    chk_: List[D] = chk_waypoints(gp2, want_dist_m=want_dist_m, way_fact=wf)
+    chk_: List[D] = chk_waypoints(gp2, want_dist_m, way_fact=wf)
     chk = sorted(chk_, key=lambda x: (x.tra_idx, x.idx,), reverse=True)
-    
+
     for d in chk:
         tra = gp2.tracks[d.tra_idx]
         seg = tra_seg(tra)
@@ -106,33 +89,23 @@ def n3():
         gp2 = gpxpy.parse(f)
         gp2.waypoints.extend(kwp)
 
-        @dataclass
-        class D():
-            vec: vec_t
-            idx: int
-            tra_idx: int
-        def wf(pos: Pos, vec: vec_t):
-            return D(vec, pos.idx, pos.tra_idx)
+        chk_waypoints_insert_inplace(gp2, 'dummy_breaker')
 
-        chk_: List[D] = chk_waypoints(gp2, way_fact=wf)
-        chk = sorted(chk_, key=lambda x: (x.tra_idx, x.idx,), reverse=True)
-        for d in chk:
-            tra = gp2.tracks[d.tra_idx]
-            seg = tra_seg(tra)
-            seg.points.insert(d.idx + 1, GPXTrackPoint(d.vec[0], d.vec[1], name='dummy_breaker'))
+        for k in kwp:
+            gpx_insert_lseg_closest_inplace(gp2, GPXTrackPoint(k.latitude, k.longitude, name='dummy_koca'))
 
-        for d in chk:
-            gp2.waypoints.append(GPXWaypoint(d.vec[0], d.vec[1], symbol='http://maps.me/placemarks/placemark-yellow.png'))
+        for t in gp2.tracks:
+            s = tra_seg(t)
+            cnt = 0
+            for p in s.points:
+                if p.name == 'dummy_koca':
+                    cnt = 0
+                    print('koca')
+                if p.name == 'dummy_breaker':
+                    cnt = cnt + 1
+                    print(f'{cnt=}')
 
     with open(root.joinpath('zzz_generated_3.gpx'), 'w', encoding='UTF-8') as f2:
         xm2 = gp2.to_xml()
         f2.write(xm2)
-
-        # for d in chk:
-        #     tra = gp2.tracks[d.tra_idx]
-        #     seg = tra_seg(tra)
-
-        # gp2.waypoints.extend()
-
-        # gpx_insert_lseg_closest_inplace()
 n3()

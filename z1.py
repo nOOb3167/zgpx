@@ -1,4 +1,4 @@
-from math import sqrt
+from math import inf, isclose, sqrt
 
 from gpxpy.gpx import (GPX, GPXTrack, GPXTrackPoint, GPXTrackSegment,
                        GPXWaypoint)
@@ -86,11 +86,13 @@ def gpx_insert_lseg_closest_inplace(gpx: GPX, pnt: GPXTrackPoint):
 def pnt_lineseg_dist(pt_, segS_, segE_):
     """https://onlinemschool.com/math/assistance/vector/projection/"""
     pt, segS, segE = mkvec(pt_), mkvec(segS_), mkvec(segE_)
+
     a = vec_sub(pt, segS)
     b = vec_sub(segE, segS)
     a_dot_b = vec_dot(a, b)
     b_len = vec_len(b)
-    a_proj_b__magnitude = a_dot_b / b_len
+    
+    a_proj_b__magnitude = a_dot_b / b_len if not isclose(b_len, 0.0, rel_tol=0.0, abs_tol=1e-4) else -inf
 
     if a_proj_b__magnitude < 0.0:
         return vec_len(vec_sub(pt, segS))
@@ -164,3 +166,10 @@ if __name__ == '__main__':
     tc = GPXTrackPoint(46.523663, 15.626323)
     print(tc.distance_2d(ta))
     print(tc.distance_2d(tb))
+
+    q = GPXTrackPoint(12, 12)
+    w = GPXWaypoint(12, 12)
+    q_ = mkvec(q)
+    w_ = mkvec(w)
+    print(q_)
+    print(w_)
