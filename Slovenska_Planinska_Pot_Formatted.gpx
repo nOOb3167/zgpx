@@ -15,221 +15,6 @@
         <name>SPP-2 (00) Slovenska planinska pot</name>
         <cmt>Slovenska planinska pot</cmt>
         <trkseg>
-            <trkpt lat="46.3704924" lon="14.5495851"/>
-            <trkpt lat="46.3704606" lon="14.5497864"/>
-            <trkpt lat="46.3705029" lon="14.5499178"/>
-            <trkpt lat="46.3705694" lon="14.5501077"/>
-            <trkpt lat="46.3706109" lon="14.5503113"/>
-            <trkpt lat="46.370585" lon="14.5505347"/>
-            <trkpt lat="46.3706601" lon="14.5506919"/>
-            <trkpt lat="46.3707317" lon="14.5507799"/>
-            <trkpt lat="46.3708067" lon="14.5508184"/>
-            <trkpt lat="46.3710028" lon="14.5511097"/>
-            <trkpt lat="46.3710794" lon="14.5513784"/>
-            <trkpt lat="46.3710929" lon="14.5517037"/>
-            <trkpt lat="46.3711278" lon="14.5518838"/>
-            <trkpt lat="46.3711557" lon="14.5520813"/>
-            <trkpt lat="46.3711243" lon="14.5522692"/>
-            <trkpt lat="46.3711942" lon="14.5523572"/>
-            <trkpt lat="46.3712683" lon="14.552502"/>
-            <trkpt lat="46.3713029" lon="14.552679"/>
-            <trkpt lat="46.3712918" lon="14.55284"/>
-            <trkpt lat="46.371272" lon="14.5529097"/>
-            <trkpt lat="46.3713103" lon="14.5530009"/>
-            <trkpt lat="46.3712609" lon="14.5531886"/>
-            <trkpt lat="46.3711918" lon="14.5533442"/>
-            <trkpt lat="46.3711239" lon="14.5535427"/>
-            <trkpt lat="46.371103" lon="14.5536661"/>
-            <trkpt lat="46.3711128" lon="14.5539289"/>
-            <trkpt lat="46.3711067" lon="14.5541435"/>
-            <trkpt lat="46.3711437" lon="14.554283"/>
-            <trkpt lat="46.3711979" lon="14.5543366"/>
-            <trkpt lat="46.3711881" lon="14.5546102"/>
-            <trkpt lat="46.3711881" lon="14.5547551"/>
-            <trkpt lat="46.3712476" lon="14.5550542"/>
-            <trkpt lat="46.3712387" lon="14.5552003"/>
-            <trkpt lat="46.3712955" lon="14.555372"/>
-            <trkpt lat="46.3712585" lon="14.5555812"/>
-            <trkpt lat="46.371214" lon="14.5557904"/>
-            <trkpt lat="46.3710475" lon="14.5559138"/>
-            <trkpt lat="46.3709809" lon="14.5560479"/>
-            <trkpt lat="46.3708994" lon="14.5563215"/>
-            <trkpt lat="46.3708106" lon="14.5565414"/>
-            <trkpt lat="46.3707524" lon="14.5567277"/>
-            <trkpt lat="46.3707813" lon="14.5568112"/>
-            <trkpt lat="46.3707569" lon="14.5570929"/>
-            <trkpt lat="46.3706081" lon="14.5572696"/>
-            <trkpt lat="46.3705326" lon="14.5573719"/>
-            <trkpt lat="46.3705591" lon="14.5574435"/>
-            <trkpt lat="46.3705493" lon="14.5576288"/>
-            <trkpt lat="46.3706471" lon="14.5576947"/>
-            <trkpt lat="46.3706477" lon="14.5578165"/>
-            <trkpt lat="46.3707018" lon="14.5579688"/>
-            <trkpt lat="46.3707149" lon="14.5580636"/>
-            <trkpt lat="46.3707625" lon="14.5580595"/>
-            <trkpt lat="46.370813" lon="14.5582687"/>
-            <trkpt lat="46.3708735" lon="14.5584136"/>
-            <trkpt lat="46.3709216" lon="14.5584672"/>
-            <trkpt lat="46.370924" lon="14.5585799"/>
-            <trkpt lat="46.3709661" lon="14.5588481"/>
-            <trkpt lat="46.3711511" lon="14.5589071"/>
-            <trkpt lat="46.3712127" lon="14.5588696"/>
-            <trkpt lat="46.3713399" lon="14.5588964"/>
-            <trkpt lat="46.3713695" lon="14.5590841"/>
-            <trkpt lat="46.37142" lon="14.5591968"/>
-            <trkpt lat="46.3714139" lon="14.5592826"/>
-            <trkpt lat="46.3713917" lon="14.5593524"/>
-            <trkpt lat="46.3714731" lon="14.5594382"/>
-            <trkpt lat="46.3714509" lon="14.5595079"/>
-            <trkpt lat="46.3715139" lon="14.5595616"/>
-            <trkpt lat="46.3714731" lon="14.5596206"/>
-            <trkpt lat="46.371557" lon="14.559803"/>
-            <trkpt lat="46.3715027" lon="14.5598244"/>
-            <trkpt lat="46.3714842" lon="14.559921"/>
-            <trkpt lat="46.3714435" lon="14.5599532"/>
-            <trkpt lat="46.3714842" lon="14.55998"/>
-            <trkpt lat="46.3714472" lon="14.5600068"/>
-            <trkpt lat="46.3714681" lon="14.5600444"/>
-            <trkpt lat="46.3713954" lon="14.5601034"/>
-            <trkpt lat="46.3715176" lon="14.5601678"/>
-            <trkpt lat="46.3715052" lon="14.5602965"/>
-            <trkpt lat="46.371673" lon="14.5603609"/>
-            <trkpt lat="46.3716064" lon="14.5604682"/>
-            <trkpt lat="46.3716939" lon="14.5605272"/>
-            <trkpt lat="46.3717494" lon="14.5606023"/>
-            <trkpt lat="46.3718359" lon="14.5606023"/>
-            <trkpt lat="46.3719308" lon="14.5606666"/>
-            <trkpt lat="46.3719012" lon="14.5607954"/>
-            <trkpt lat="46.372032" lon="14.5608115"/>
-            <trkpt lat="46.3719789" lon="14.5609295"/>
-            <trkpt lat="46.372027" lon="14.5609295"/>
-            <trkpt lat="46.3720024" lon="14.5609778"/>
-            <trkpt lat="46.3720455" lon="14.5610207"/>
-            <trkpt lat="46.3721085" lon="14.5609831"/>
-            <trkpt lat="46.3721566" lon="14.5610422"/>
-            <trkpt lat="46.3721307" lon="14.561128"/>
-            <trkpt lat="46.3721455" lon="14.5611977"/>
-            <trkpt lat="46.3721973" lon="14.5612031"/>
-            <trkpt lat="46.372238" lon="14.5612728"/>
-            <trkpt lat="46.3722713" lon="14.561423"/>
-            <trkpt lat="46.3723009" lon="14.5615464"/>
-            <trkpt lat="46.3723356" lon="14.5616265"/>
-        </trkseg>
-    </trk>
-    <trk>
-        <name>SPP-2 (01) Slovenska planinska pot</name>
-        <cmt>Slovenska planinska pot</cmt>
-        <trkseg>
-            <trkpt lat="46.4098392" lon="14.7377539"/>
-            <trkpt lat="46.4098866" lon="14.7380526"/>
-            <trkpt lat="46.4100039" lon="14.7383186"/>
-            <trkpt lat="46.4100596" lon="14.7386053"/>
-            <trkpt lat="46.4101555" lon="14.7387319"/>
-            <trkpt lat="46.4102298" lon="14.7387786"/>
-            <trkpt lat="46.4102564" lon="14.7388099"/>
-            <trkpt lat="46.4102526" lon="14.7390027"/>
-            <trkpt lat="46.4101753" lon="14.7390911"/>
-            <trkpt lat="46.4101031" lon="14.7392267"/>
-            <trkpt lat="46.410119" lon="14.7393063"/>
-            <trkpt lat="46.4102743" lon="14.7393994"/>
-            <trkpt lat="46.4103481" lon="14.7394251"/>
-            <trkpt lat="46.4104059" lon="14.7394375"/>
-            <trkpt lat="46.4104762" lon="14.7394424"/>
-            <trkpt lat="46.4105288" lon="14.7394276"/>
-            <trkpt lat="46.410576" lon="14.7394433"/>
-            <trkpt lat="46.4105957" lon="14.7393776"/>
-            <trkpt lat="46.4107334" lon="14.73933"/>
-            <trkpt lat="46.4107924" lon="14.7393564"/>
-            <trkpt lat="46.410894" lon="14.739433"/>
-            <trkpt lat="46.4110835" lon="14.7395766"/>
-            <trkpt lat="46.4111935" lon="14.7396527"/>
-            <trkpt lat="46.4112847" lon="14.7398123"/>
-            <trkpt lat="46.411315" lon="14.7399612"/>
-            <trkpt lat="46.4112895" lon="14.7402189"/>
-            <trkpt lat="46.4113245" lon="14.7403072"/>
-            <trkpt lat="46.4113717" lon="14.7403387"/>
-            <trkpt lat="46.4114021" lon="14.7403204"/>
-            <trkpt lat="46.4114344" lon="14.7403371"/>
-            <trkpt lat="46.4114736" lon="14.7404365"/>
-            <trkpt lat="46.4114718" lon="14.7405529"/>
-            <trkpt lat="46.4115433" lon="14.7407183"/>
-            <trkpt lat="46.4115622" lon="14.7408058"/>
-            <trkpt lat="46.4115658" lon="14.7408785"/>
-            <trkpt lat="46.4116406" lon="14.7409902"/>
-            <trkpt lat="46.4117202" lon="14.7412438"/>
-            <trkpt lat="46.4117315" lon="14.7414802"/>
-            <trkpt lat="46.4116912" lon="14.7416247"/>
-            <trkpt lat="46.411712" lon="14.7419043"/>
-            <trkpt lat="46.4117359" lon="14.7419588"/>
-            <trkpt lat="46.4118423" lon="14.7420258"/>
-            <trkpt lat="46.4118745" lon="14.7420934"/>
-            <trkpt lat="46.4119701" lon="14.7421558"/>
-            <trkpt lat="46.412059" lon="14.742221"/>
-            <trkpt lat="46.4120974" lon="14.7423074"/>
-            <trkpt lat="46.4121711" lon="14.7423532"/>
-            <trkpt lat="46.412236" lon="14.7424385"/>
-            <trkpt lat="46.4122736" lon="14.7425047"/>
-            <trkpt lat="46.412326" lon="14.7426168"/>
-            <trkpt lat="46.412335" lon="14.7427392"/>
-            <trkpt lat="46.412467" lon="14.7430452"/>
-            <trkpt lat="46.4125305" lon="14.7431471"/>
-            <trkpt lat="46.4125791" lon="14.7431866"/>
-            <trkpt lat="46.4126103" lon="14.7433084"/>
-            <trkpt lat="46.4126726" lon="14.7434226"/>
-            <trkpt lat="46.4126852" lon="14.7435759"/>
-            <trkpt lat="46.4127925" lon="14.7438333"/>
-            <trkpt lat="46.4128322" lon="14.7438835"/>
-            <trkpt lat="46.412921" lon="14.7441324"/>
-            <trkpt lat="46.4129933" lon="14.744401"/>
-            <trkpt lat="46.4129773" lon="14.7446131"/>
-            <trkpt lat="46.4129881" lon="14.7448823"/>
-            <trkpt lat="46.4129879" lon="14.745092"/>
-        </trkseg>
-    </trk>
-    <trk>
-        <name>SPP-2 (02) Slovenska planinska pot</name>
-        <cmt>Slovenska planinska pot</cmt>
-        <trkseg>
-            <trkpt lat="46.4844373" lon="14.9652001"/>
-            <trkpt lat="46.4843802" lon="14.9652752"/>
-            <trkpt lat="46.4843618" lon="14.9654523"/>
-            <trkpt lat="46.4843952" lon="14.9655363"/>
-            <trkpt lat="46.4844495" lon="14.9656604"/>
-            <trkpt lat="46.4844736" lon="14.9657674"/>
-            <trkpt lat="46.4844549" lon="14.9658267"/>
-            <trkpt lat="46.4844741" lon="14.9659139"/>
-            <trkpt lat="46.4845429" lon="14.9660471"/>
-            <trkpt lat="46.4846691" lon="14.9661804"/>
-            <trkpt lat="46.4847987" lon="14.9663403"/>
-            <trkpt lat="46.4848641" lon="14.9664802"/>
-            <trkpt lat="46.4849088" lon="14.9666652"/>
-            <trkpt lat="46.4849146" lon="14.9668051"/>
-            <trkpt lat="46.4848997" lon="14.9668701"/>
-            <trkpt lat="46.4848262" lon="14.9669867"/>
-            <trkpt lat="46.484793" lon="14.9671166"/>
-            <trkpt lat="46.4847597" lon="14.9671866"/>
-            <trkpt lat="46.4847414" lon="14.9672815"/>
-            <trkpt lat="46.484684" lon="14.9674481"/>
-            <trkpt lat="46.4845716" lon="14.9676963"/>
-            <trkpt lat="46.4845269" lon="14.9678845"/>
-            <trkpt lat="46.4845338" lon="14.9680328"/>
-            <trkpt lat="46.4845957" lon="14.9682327"/>
-            <trkpt lat="46.4846966" lon="14.9684309"/>
-            <trkpt lat="46.4847999" lon="14.9685559"/>
-            <trkpt lat="46.4849134" lon="14.9686542"/>
-            <trkpt lat="46.4849719" lon="14.9686542"/>
-            <trkpt lat="46.4850029" lon="14.9686925"/>
-            <trkpt lat="46.4849811" lon="14.9687458"/>
-            <trkpt lat="46.4849536" lon="14.9688008"/>
-            <trkpt lat="46.4849077" lon="14.9688441"/>
-            <trkpt lat="46.4848733" lon="14.9689107"/>
-            <trkpt lat="46.4848159" lon="14.9689773"/>
-        </trkseg>
-    </trk>
-    <trk>
-        <name>SPP-2 (03) Slovenska planinska pot</name>
-        <cmt>Slovenska planinska pot</cmt>
-        <trkseg>
             <trkpt lat="46.5332133" lon="15.628562"/>
             <trkpt lat="46.5330729" lon="15.6286842"/>
             <trkpt lat="46.5329648" lon="15.6287354"/>
@@ -6827,7 +6612,7 @@
         </trkseg>
     </trk>
     <trk>
-        <name>SPP-2 (04) Slovenska planinska pot</name>
+        <name>SPP-2 (01) Slovenska planinska pot</name>
         <cmt>Slovenska planinska pot</cmt>
         <trkseg>
             <trkpt lat="46.3639579" lon="14.6372928"/>
@@ -8710,7 +8495,7 @@
         </trkseg>
     </trk>
     <trk>
-        <name>SPP-2 (05) Slovenska planinska pot</name>
+        <name>SPP-2 (02) Slovenska planinska pot</name>
         <cmt>Slovenska planinska pot</cmt>
         <trkseg>
             <trkpt lat="46.3588627" lon="14.5220263"/>
@@ -9505,7 +9290,7 @@
         </trkseg>
     </trk>
     <trk>
-        <name>SPP-2 (06) Slovenska planinska pot</name>
+        <name>SPP-2 (03) Slovenska planinska pot</name>
         <cmt>Slovenska planinska pot</cmt>
         <trkseg>
             <trkpt lat="46.3371243" lon="14.4168852"/>
@@ -9823,7 +9608,7 @@
         </trkseg>
     </trk>
     <trk>
-        <name>SPP-2 (07) Slovenska planinska pot</name>
+        <name>SPP-2 (04) Slovenska planinska pot</name>
         <cmt>Slovenska planinska pot</cmt>
         <trkseg>
             <trkpt lat="46.3566751" lon="14.390389"/>
@@ -10197,7 +9982,7 @@
         </trkseg>
     </trk>
     <trk>
-        <name>SPP-2 (08) Slovenska planinska pot</name>
+        <name>SPP-2 (05) Slovenska planinska pot</name>
         <cmt>Slovenska planinska pot</cmt>
         <trkseg>
             <trkpt lat="46.3610822" lon="14.2919812"/>
@@ -11891,7 +11676,7 @@
         </trkseg>
     </trk>
     <trk>
-        <name>SPP-2 (09) Slovenska planinska pot</name>
+        <name>SPP-2 (06) Slovenska planinska pot</name>
         <cmt>Slovenska planinska pot</cmt>
         <trkseg>
             <trkpt lat="46.4339517" lon="14.1739807"/>
@@ -12479,7 +12264,7 @@
         </trkseg>
     </trk>
     <trk>
-        <name>SPP-2 (10) Slovenska planinska pot</name>
+        <name>SPP-2 (07) Slovenska planinska pot</name>
         <cmt>Slovenska planinska pot</cmt>
         <trkseg>
             <trkpt lat="46.4913894" lon="14.0545619"/>
@@ -15625,7 +15410,7 @@
         </trkseg>
     </trk>
     <trk>
-        <name>SPP-2 (11) Slovenska planinska pot</name>
+        <name>SPP-2 (08) Slovenska planinska pot</name>
         <cmt>Slovenska planinska pot</cmt>
         <trkseg>
             <trkpt lat="46.4128644" lon="13.7912728"/>
@@ -16742,7 +16527,7 @@
         </trkseg>
     </trk>
     <trk>
-        <name>SPP-2 (12) Slovenska planinska pot</name>
+        <name>SPP-2 (09) Slovenska planinska pot</name>
         <cmt>Slovenska planinska pot</cmt>
         <trkseg>
             <trkpt lat="46.4186937" lon="13.7533495"/>
@@ -17402,7 +17187,7 @@
         </trkseg>
     </trk>
     <trk>
-        <name>SPP-2 (13) Slovenska planinska pot</name>
+        <name>SPP-2 (10) Slovenska planinska pot</name>
         <cmt>Slovenska planinska pot</cmt>
         <trkseg>
             <trkpt lat="46.4122354" lon="13.6982978"/>
@@ -17489,7 +17274,7 @@
         </trkseg>
     </trk>
     <trk>
-        <name>SPP-2 (14) Slovenska planinska pot</name>
+        <name>SPP-2 (11) Slovenska planinska pot</name>
         <cmt>Slovenska planinska pot</cmt>
         <trkseg>
             <trkpt lat="46.4185289" lon="13.6803362"/>
@@ -18140,7 +17925,7 @@
         </trkseg>
     </trk>
     <trk>
-        <name>SPP-2 (15) Slovenska planinska pot</name>
+        <name>SPP-2 (12) Slovenska planinska pot</name>
         <cmt>Slovenska planinska pot</cmt>
         <trkseg>
             <trkpt lat="46.3810531" lon="13.7515207"/>
@@ -23965,7 +23750,7 @@
         </trkseg>
     </trk>
     <trk>
-        <name>SPP-2 (16) Slovenska planinska pot</name>
+        <name>SPP-2 (13) Slovenska planinska pot</name>
         <cmt>Slovenska planinska pot</cmt>
         <trkseg>
             <trkpt lat="46.240361" lon="13.9750348"/>
@@ -25894,7 +25679,157 @@
         </trkseg>
     </trk>
     <trk>
-        <name>SPP-2 (17) Slovenska planinska pot</name>
+        <name>SPP-2 (14) Slovenska planinska pot</name>
+        <cmt>Slovenska planinska pot</cmt>
+        <trkseg>
+            <trkpt lat="46.0594664" lon="14.0544067"/>
+            <trkpt lat="46.0594625" lon="14.0541933"/>
+            <trkpt lat="46.0594593" lon="14.0539044"/>
+            <trkpt lat="46.0595564" lon="14.0532232"/>
+            <trkpt lat="46.0596789" lon="14.05262"/>
+            <trkpt lat="46.0598189" lon="14.0521017"/>
+            <trkpt lat="46.0598906" lon="14.0519228"/>
+            <trkpt lat="46.0600481" lon="14.0518471"/>
+            <trkpt lat="46.0602407" lon="14.0516338"/>
+            <trkpt lat="46.0603632" lon="14.0512646"/>
+            <trkpt lat="46.0604317" lon="14.0508449"/>
+            <trkpt lat="46.0604794" lon="14.0503678"/>
+            <trkpt lat="46.0606099" lon="14.0498839"/>
+            <trkpt lat="46.0608009" lon="14.0493931"/>
+            <trkpt lat="46.0609871" lon="14.0490743"/>
+            <trkpt lat="46.0611207" lon="14.0487326"/>
+            <trkpt lat="46.0612051" lon="14.0483954"/>
+            <trkpt lat="46.0612164" lon="14.0479983"/>
+            <trkpt lat="46.0612771" lon="14.0479484"/>
+            <trkpt lat="46.061326" lon="14.047923"/>
+            <trkpt lat="46.0615003" lon="14.047861"/>
+            <trkpt lat="46.0616905" lon="14.0477551"/>
+            <trkpt lat="46.0618211" lon="14.0476207"/>
+            <trkpt lat="46.0619616" lon="14.0475384"/>
+            <trkpt lat="46.0620843" lon="14.0473598"/>
+            <trkpt lat="46.0621105" lon="14.0472962"/>
+            <trkpt lat="46.0621547" lon="14.0471996"/>
+            <trkpt lat="46.0622861" lon="14.0469874"/>
+            <trkpt lat="46.062553" lon="14.0465598"/>
+            <trkpt lat="46.0626193" lon="14.0464083"/>
+            <trkpt lat="46.062674" lon="14.046333"/>
+            <trkpt lat="46.0628943" lon="14.0460984"/>
+            <trkpt lat="46.0629925" lon="14.0459288"/>
+            <trkpt lat="46.0630657" lon="14.0457952"/>
+            <trkpt lat="46.0631895" lon="14.0454686"/>
+            <trkpt lat="46.0632953" lon="14.0451848"/>
+            <trkpt lat="46.0633204" lon="14.0450637"/>
+            <trkpt lat="46.0633231" lon="14.0449524"/>
+            <trkpt lat="46.0633007" lon="14.0448075"/>
+            <trkpt lat="46.0633173" lon="14.044682"/>
+            <trkpt lat="46.0633503" lon="14.0445529"/>
+            <trkpt lat="46.0635351" lon="14.0438338"/>
+            <trkpt lat="46.0636505" lon="14.0433666"/>
+            <trkpt lat="46.0637232" lon="14.0430284"/>
+            <trkpt lat="46.0637824" lon="14.0427167"/>
+            <trkpt lat="46.0638146" lon="14.0424938"/>
+            <trkpt lat="46.0638349" lon="14.0423613"/>
+            <trkpt lat="46.0638515" lon="14.0422507"/>
+            <trkpt lat="46.0638567" lon="14.0421613"/>
+            <trkpt lat="46.0638506" lon="14.0417841"/>
+            <trkpt lat="46.0638506" lon="14.0414767"/>
+            <trkpt lat="46.0638914" lon="14.0411964"/>
+            <trkpt lat="46.0639624" lon="14.0409372"/>
+            <trkpt lat="46.0640851" lon="14.0406401"/>
+            <trkpt lat="46.0641603" lon="14.0404898"/>
+            <trkpt lat="46.0644069" lon="14.0400541"/>
+            <trkpt lat="46.0646307" lon="14.0397454"/>
+            <trkpt lat="46.0646696" lon="14.0396258"/>
+            <trkpt lat="46.0646739" lon="14.039509"/>
+            <trkpt lat="46.0646698" lon="14.0394109"/>
+            <trkpt lat="46.0645996" lon="14.039133"/>
+            <trkpt lat="46.0644979" lon="14.0387808"/>
+            <trkpt lat="46.0644739" lon="14.0386178"/>
+            <trkpt lat="46.0644524" lon="14.0383435"/>
+            <trkpt lat="46.0644454" lon="14.0379966"/>
+            <trkpt lat="46.0644525" lon="14.0377306"/>
+            <trkpt lat="46.0644852" lon="14.0375638"/>
+            <trkpt lat="46.0645253" lon="14.0374497"/>
+            <trkpt lat="46.0645754" lon="14.037283"/>
+            <trkpt lat="46.0646067" lon="14.0370702"/>
+            <trkpt lat="46.0646806" lon="14.0368822"/>
+            <trkpt lat="46.0647682" lon="14.0366735"/>
+            <trkpt lat="46.0648414" lon="14.036607"/>
+            <trkpt lat="46.0648684" lon="14.0366322"/>
+            <trkpt lat="46.0649321" lon="14.0368272"/>
+            <trkpt lat="46.0649151" lon="14.0369736"/>
+            <trkpt lat="46.0648904" lon="14.0371374"/>
+            <trkpt lat="46.0649245" lon="14.0371611"/>
+            <trkpt lat="46.0649917" lon="14.03715"/>
+            <trkpt lat="46.06503" lon="14.0371109"/>
+            <trkpt lat="46.0650825" lon="14.0370415"/>
+            <trkpt lat="46.065144" lon="14.0369466"/>
+            <trkpt lat="46.0652518" lon="14.0367872"/>
+            <trkpt lat="46.0653006" lon="14.036749"/>
+            <trkpt lat="46.0653796" lon="14.0367272"/>
+            <trkpt lat="46.0654301" lon="14.0365864"/>
+            <trkpt lat="46.0655479" lon="14.036318"/>
+            <trkpt lat="46.0656529" lon="14.0359189"/>
+            <trkpt lat="46.0657102" lon="14.0356575"/>
+            <trkpt lat="46.0657213" lon="14.0353846"/>
+            <trkpt lat="46.0656465" lon="14.0350199"/>
+            <trkpt lat="46.0655718" lon="14.0347309"/>
+            <trkpt lat="46.0655543" lon="14.03463"/>
+            <trkpt lat="46.0655702" lon="14.0344993"/>
+            <trkpt lat="46.0656131" lon="14.0343961"/>
+            <trkpt lat="46.0656609" lon="14.0343456"/>
+            <trkpt lat="46.0658264" lon="14.0344832"/>
+            <trkpt lat="46.0660332" lon="14.0346759"/>
+            <trkpt lat="46.0661526" lon="14.0346782"/>
+            <trkpt lat="46.0662608" lon="14.0345085"/>
+            <trkpt lat="46.0663181" lon="14.0342906"/>
+            <trkpt lat="46.0663738" lon="14.0341943"/>
+            <trkpt lat="46.0665202" lon="14.0340933"/>
+            <trkpt lat="46.0666841" lon="14.0338571"/>
+            <trkpt lat="46.0668909" lon="14.033497"/>
+            <trkpt lat="46.0669959" lon="14.0332287"/>
+            <trkpt lat="46.0669864" lon="14.0329627"/>
+            <trkpt lat="46.0670246" lon="14.0328251"/>
+            <trkpt lat="46.0673572" lon="14.0326301"/>
+            <trkpt lat="46.0675879" lon="14.0325567"/>
+            <trkpt lat="46.0677123" lon="14.0324562"/>
+            <trkpt lat="46.067808" lon="14.0321752"/>
+            <trkpt lat="46.0678902" lon="14.032004"/>
+            <trkpt lat="46.0679522" lon="14.0319126"/>
+            <trkpt lat="46.0680285" lon="14.0318294"/>
+            <trkpt lat="46.0681686" lon="14.0316953"/>
+            <trkpt lat="46.0682464" lon="14.0316434"/>
+            <trkpt lat="46.068292" lon="14.0316358"/>
+            <trkpt lat="46.0685521" lon="14.0314882"/>
+            <trkpt lat="46.0686552" lon="14.031413"/>
+            <trkpt lat="46.0686716" lon="14.031401"/>
+            <trkpt lat="46.0687483" lon="14.0312802"/>
+            <trkpt lat="46.0687977" lon="14.0311069"/>
+            <trkpt lat="46.0688279" lon="14.0309041"/>
+            <trkpt lat="46.0688383" lon="14.0308075"/>
+            <trkpt lat="46.0688167" lon="14.0307467"/>
+            <trkpt lat="46.0689106" lon="14.0303445"/>
+            <trkpt lat="46.0691207" lon="14.0299867"/>
+            <trkpt lat="46.0693721" lon="14.0295005"/>
+            <trkpt lat="46.0695025" lon="14.0291152"/>
+            <trkpt lat="46.0696998" lon="14.0285418"/>
+            <trkpt lat="46.0698335" lon="14.0280785"/>
+            <trkpt lat="46.0698494" lon="14.0277437"/>
+            <trkpt lat="46.0699672" lon="14.0274088"/>
+            <trkpt lat="46.0703101" lon="14.0269659"/>
+            <trkpt lat="46.070319" lon="14.0269544"/>
+            <trkpt lat="46.0705276" lon="14.026759"/>
+            <trkpt lat="46.070575" lon="14.026695"/>
+            <trkpt lat="46.0705969" lon="14.0266348"/>
+            <trkpt lat="46.0706292" lon="14.0265068"/>
+            <trkpt lat="46.0706449" lon="14.0264074"/>
+            <trkpt lat="46.0706264" lon="14.0262586"/>
+            <trkpt lat="46.0705863" lon="14.0261251"/>
+            <trkpt lat="46.0705527" lon="14.0260465"/>
+        </trkseg>
+    </trk>
+    <trk>
+        <name>SPP-2 (15) Slovenska planinska pot</name>
         <cmt>Slovenska planinska pot</cmt>
         <trkseg>
             <trkpt lat="46.0830559" lon="14.0058267"/>
@@ -27180,7 +27115,7 @@
         </trkseg>
     </trk>
     <trk>
-        <name>SPP-2 (18) Slovenska planinska pot</name>
+        <name>SPP-2 (16) Slovenska planinska pot</name>
         <cmt>Slovenska planinska pot</cmt>
         <trkseg>
             <trkpt lat="46.0021361" lon="14.0283802"/>
@@ -28546,7 +28481,7 @@
         </trkseg>
     </trk>
     <trk>
-        <name>SPP-2 (19) Slovenska planinska pot</name>
+        <name>SPP-2 (17) Slovenska planinska pot</name>
         <cmt>Slovenska planinska pot</cmt>
         <trkseg>
             <trkpt lat="45.9614372" lon="13.8452947"/>
@@ -28588,7 +28523,7 @@
         </trkseg>
     </trk>
     <trk>
-        <name>SPP-2 (20) Slovenska planinska pot</name>
+        <name>SPP-2 (18) Slovenska planinska pot</name>
         <cmt>Slovenska planinska pot</cmt>
         <trkseg>
             <trkpt lat="45.95921" lon="13.8482574"/>
@@ -29589,7 +29524,7 @@
         </trkseg>
     </trk>
     <trk>
-        <name>SPP-2 (21) Slovenska planinska pot</name>
+        <name>SPP-2 (19) Slovenska planinska pot</name>
         <cmt>Slovenska planinska pot</cmt>
         <trkseg>
             <trkpt lat="45.9072255" lon="13.9230311"/>
@@ -32226,7 +32161,7 @@
         </trkseg>
     </trk>
     <trk>
-        <name>SPP-2 (22) Slovenska planinska pot</name>
+        <name>SPP-2 (20) Slovenska planinska pot</name>
         <cmt>Slovenska planinska pot</cmt>
         <trkseg>
             <trkpt lat="45.6896996" lon="14.0519191"/>
@@ -32338,7 +32273,7 @@
         </trkseg>
     </trk>
     <trk>
-        <name>SPP-2 (23) Slovenska planinska pot</name>
+        <name>SPP-2 (21) Slovenska planinska pot</name>
         <cmt>Slovenska planinska pot</cmt>
         <trkseg>
             <trkpt lat="45.695668" lon="14.0496646"/>
@@ -33827,7 +33762,7 @@
         </trkseg>
     </trk>
     <trk>
-        <name>SPP-2 (24) Slovenska planinska pot</name>
+        <name>SPP-2 (22) Slovenska planinska pot</name>
         <cmt>Slovenska planinska pot</cmt>
         <trkseg>
             <trkpt lat="45.5342809" lon="13.9748431"/>
@@ -34144,7 +34079,7 @@
         </trkseg>
     </trk>
     <trk>
-        <name>SPP-2 (25) Slovenska planinska pot</name>
+        <name>SPP-2 (23) Slovenska planinska pot</name>
         <cmt>Slovenska planinska pot</cmt>
         <trkseg>
             <trkpt lat="45.5747683" lon="13.9111149"/>
@@ -35262,153 +35197,218 @@
         </trkseg>
     </trk>
     <trk>
+        <name>SPP-2 (24) Slovenska planinska pot</name>
+        <cmt>Slovenska planinska pot</cmt>
+        <trkseg>
+            <trkpt lat="46.4844373" lon="14.9652001"/>
+            <trkpt lat="46.4843802" lon="14.9652752"/>
+            <trkpt lat="46.4843618" lon="14.9654523"/>
+            <trkpt lat="46.4843952" lon="14.9655363"/>
+            <trkpt lat="46.4844495" lon="14.9656604"/>
+            <trkpt lat="46.4844736" lon="14.9657674"/>
+            <trkpt lat="46.4844549" lon="14.9658267"/>
+            <trkpt lat="46.4844741" lon="14.9659139"/>
+            <trkpt lat="46.4845429" lon="14.9660471"/>
+            <trkpt lat="46.4846691" lon="14.9661804"/>
+            <trkpt lat="46.4847987" lon="14.9663403"/>
+            <trkpt lat="46.4848641" lon="14.9664802"/>
+            <trkpt lat="46.4849088" lon="14.9666652"/>
+            <trkpt lat="46.4849146" lon="14.9668051"/>
+            <trkpt lat="46.4848997" lon="14.9668701"/>
+            <trkpt lat="46.4848262" lon="14.9669867"/>
+            <trkpt lat="46.484793" lon="14.9671166"/>
+            <trkpt lat="46.4847597" lon="14.9671866"/>
+            <trkpt lat="46.4847414" lon="14.9672815"/>
+            <trkpt lat="46.484684" lon="14.9674481"/>
+            <trkpt lat="46.4845716" lon="14.9676963"/>
+            <trkpt lat="46.4845269" lon="14.9678845"/>
+            <trkpt lat="46.4845338" lon="14.9680328"/>
+            <trkpt lat="46.4845957" lon="14.9682327"/>
+            <trkpt lat="46.4846966" lon="14.9684309"/>
+            <trkpt lat="46.4847999" lon="14.9685559"/>
+            <trkpt lat="46.4849134" lon="14.9686542"/>
+            <trkpt lat="46.4849719" lon="14.9686542"/>
+            <trkpt lat="46.4850029" lon="14.9686925"/>
+            <trkpt lat="46.4849811" lon="14.9687458"/>
+            <trkpt lat="46.4849536" lon="14.9688008"/>
+            <trkpt lat="46.4849077" lon="14.9688441"/>
+            <trkpt lat="46.4848733" lon="14.9689107"/>
+            <trkpt lat="46.4848159" lon="14.9689773"/>
+        </trkseg>
+    </trk>
+    <trk>
+        <name>SPP-2 (25) Slovenska planinska pot</name>
+        <cmt>Slovenska planinska pot</cmt>
+        <trkseg>
+            <trkpt lat="46.4098392" lon="14.7377539"/>
+            <trkpt lat="46.4098866" lon="14.7380526"/>
+            <trkpt lat="46.4100039" lon="14.7383186"/>
+            <trkpt lat="46.4100596" lon="14.7386053"/>
+            <trkpt lat="46.4101555" lon="14.7387319"/>
+            <trkpt lat="46.4102298" lon="14.7387786"/>
+            <trkpt lat="46.4102564" lon="14.7388099"/>
+            <trkpt lat="46.4102526" lon="14.7390027"/>
+            <trkpt lat="46.4101753" lon="14.7390911"/>
+            <trkpt lat="46.4101031" lon="14.7392267"/>
+            <trkpt lat="46.410119" lon="14.7393063"/>
+            <trkpt lat="46.4102743" lon="14.7393994"/>
+            <trkpt lat="46.4103481" lon="14.7394251"/>
+            <trkpt lat="46.4104059" lon="14.7394375"/>
+            <trkpt lat="46.4104762" lon="14.7394424"/>
+            <trkpt lat="46.4105288" lon="14.7394276"/>
+            <trkpt lat="46.410576" lon="14.7394433"/>
+            <trkpt lat="46.4105957" lon="14.7393776"/>
+            <trkpt lat="46.4107334" lon="14.73933"/>
+            <trkpt lat="46.4107924" lon="14.7393564"/>
+            <trkpt lat="46.410894" lon="14.739433"/>
+            <trkpt lat="46.4110835" lon="14.7395766"/>
+            <trkpt lat="46.4111935" lon="14.7396527"/>
+            <trkpt lat="46.4112847" lon="14.7398123"/>
+            <trkpt lat="46.411315" lon="14.7399612"/>
+            <trkpt lat="46.4112895" lon="14.7402189"/>
+            <trkpt lat="46.4113245" lon="14.7403072"/>
+            <trkpt lat="46.4113717" lon="14.7403387"/>
+            <trkpt lat="46.4114021" lon="14.7403204"/>
+            <trkpt lat="46.4114344" lon="14.7403371"/>
+            <trkpt lat="46.4114736" lon="14.7404365"/>
+            <trkpt lat="46.4114718" lon="14.7405529"/>
+            <trkpt lat="46.4115433" lon="14.7407183"/>
+            <trkpt lat="46.4115622" lon="14.7408058"/>
+            <trkpt lat="46.4115658" lon="14.7408785"/>
+            <trkpt lat="46.4116406" lon="14.7409902"/>
+            <trkpt lat="46.4117202" lon="14.7412438"/>
+            <trkpt lat="46.4117315" lon="14.7414802"/>
+            <trkpt lat="46.4116912" lon="14.7416247"/>
+            <trkpt lat="46.411712" lon="14.7419043"/>
+            <trkpt lat="46.4117359" lon="14.7419588"/>
+            <trkpt lat="46.4118423" lon="14.7420258"/>
+            <trkpt lat="46.4118745" lon="14.7420934"/>
+            <trkpt lat="46.4119701" lon="14.7421558"/>
+            <trkpt lat="46.412059" lon="14.742221"/>
+            <trkpt lat="46.4120974" lon="14.7423074"/>
+            <trkpt lat="46.4121711" lon="14.7423532"/>
+            <trkpt lat="46.412236" lon="14.7424385"/>
+            <trkpt lat="46.4122736" lon="14.7425047"/>
+            <trkpt lat="46.412326" lon="14.7426168"/>
+            <trkpt lat="46.412335" lon="14.7427392"/>
+            <trkpt lat="46.412467" lon="14.7430452"/>
+            <trkpt lat="46.4125305" lon="14.7431471"/>
+            <trkpt lat="46.4125791" lon="14.7431866"/>
+            <trkpt lat="46.4126103" lon="14.7433084"/>
+            <trkpt lat="46.4126726" lon="14.7434226"/>
+            <trkpt lat="46.4126852" lon="14.7435759"/>
+            <trkpt lat="46.4127925" lon="14.7438333"/>
+            <trkpt lat="46.4128322" lon="14.7438835"/>
+            <trkpt lat="46.412921" lon="14.7441324"/>
+            <trkpt lat="46.4129933" lon="14.744401"/>
+            <trkpt lat="46.4129773" lon="14.7446131"/>
+            <trkpt lat="46.4129881" lon="14.7448823"/>
+            <trkpt lat="46.4129879" lon="14.745092"/>
+        </trkseg>
+    </trk>
+    <trk>
         <name>SPP-2 (26) Slovenska planinska pot</name>
         <cmt>Slovenska planinska pot</cmt>
         <trkseg>
-            <trkpt lat="46.0594664" lon="14.0544067"/>
-            <trkpt lat="46.0594625" lon="14.0541933"/>
-            <trkpt lat="46.0594593" lon="14.0539044"/>
-            <trkpt lat="46.0595564" lon="14.0532232"/>
-            <trkpt lat="46.0596789" lon="14.05262"/>
-            <trkpt lat="46.0598189" lon="14.0521017"/>
-            <trkpt lat="46.0598906" lon="14.0519228"/>
-            <trkpt lat="46.0600481" lon="14.0518471"/>
-            <trkpt lat="46.0602407" lon="14.0516338"/>
-            <trkpt lat="46.0603632" lon="14.0512646"/>
-            <trkpt lat="46.0604317" lon="14.0508449"/>
-            <trkpt lat="46.0604794" lon="14.0503678"/>
-            <trkpt lat="46.0606099" lon="14.0498839"/>
-            <trkpt lat="46.0608009" lon="14.0493931"/>
-            <trkpt lat="46.0609871" lon="14.0490743"/>
-            <trkpt lat="46.0611207" lon="14.0487326"/>
-            <trkpt lat="46.0612051" lon="14.0483954"/>
-            <trkpt lat="46.0612164" lon="14.0479983"/>
-            <trkpt lat="46.0612771" lon="14.0479484"/>
-            <trkpt lat="46.061326" lon="14.047923"/>
-            <trkpt lat="46.0615003" lon="14.047861"/>
-            <trkpt lat="46.0616905" lon="14.0477551"/>
-            <trkpt lat="46.0618211" lon="14.0476207"/>
-            <trkpt lat="46.0619616" lon="14.0475384"/>
-            <trkpt lat="46.0620843" lon="14.0473598"/>
-            <trkpt lat="46.0621105" lon="14.0472962"/>
-            <trkpt lat="46.0621547" lon="14.0471996"/>
-            <trkpt lat="46.0622861" lon="14.0469874"/>
-            <trkpt lat="46.062553" lon="14.0465598"/>
-            <trkpt lat="46.0626193" lon="14.0464083"/>
-            <trkpt lat="46.062674" lon="14.046333"/>
-            <trkpt lat="46.0628943" lon="14.0460984"/>
-            <trkpt lat="46.0629925" lon="14.0459288"/>
-            <trkpt lat="46.0630657" lon="14.0457952"/>
-            <trkpt lat="46.0631895" lon="14.0454686"/>
-            <trkpt lat="46.0632953" lon="14.0451848"/>
-            <trkpt lat="46.0633204" lon="14.0450637"/>
-            <trkpt lat="46.0633231" lon="14.0449524"/>
-            <trkpt lat="46.0633007" lon="14.0448075"/>
-            <trkpt lat="46.0633173" lon="14.044682"/>
-            <trkpt lat="46.0633503" lon="14.0445529"/>
-            <trkpt lat="46.0635351" lon="14.0438338"/>
-            <trkpt lat="46.0636505" lon="14.0433666"/>
-            <trkpt lat="46.0637232" lon="14.0430284"/>
-            <trkpt lat="46.0637824" lon="14.0427167"/>
-            <trkpt lat="46.0638146" lon="14.0424938"/>
-            <trkpt lat="46.0638349" lon="14.0423613"/>
-            <trkpt lat="46.0638515" lon="14.0422507"/>
-            <trkpt lat="46.0638567" lon="14.0421613"/>
-            <trkpt lat="46.0638506" lon="14.0417841"/>
-            <trkpt lat="46.0638506" lon="14.0414767"/>
-            <trkpt lat="46.0638914" lon="14.0411964"/>
-            <trkpt lat="46.0639624" lon="14.0409372"/>
-            <trkpt lat="46.0640851" lon="14.0406401"/>
-            <trkpt lat="46.0641603" lon="14.0404898"/>
-            <trkpt lat="46.0644069" lon="14.0400541"/>
-            <trkpt lat="46.0646307" lon="14.0397454"/>
-            <trkpt lat="46.0646696" lon="14.0396258"/>
-            <trkpt lat="46.0646739" lon="14.039509"/>
-            <trkpt lat="46.0646698" lon="14.0394109"/>
-            <trkpt lat="46.0645996" lon="14.039133"/>
-            <trkpt lat="46.0644979" lon="14.0387808"/>
-            <trkpt lat="46.0644739" lon="14.0386178"/>
-            <trkpt lat="46.0644524" lon="14.0383435"/>
-            <trkpt lat="46.0644454" lon="14.0379966"/>
-            <trkpt lat="46.0644525" lon="14.0377306"/>
-            <trkpt lat="46.0644852" lon="14.0375638"/>
-            <trkpt lat="46.0645253" lon="14.0374497"/>
-            <trkpt lat="46.0645754" lon="14.037283"/>
-            <trkpt lat="46.0646067" lon="14.0370702"/>
-            <trkpt lat="46.0646806" lon="14.0368822"/>
-            <trkpt lat="46.0647682" lon="14.0366735"/>
-            <trkpt lat="46.0648414" lon="14.036607"/>
-            <trkpt lat="46.0648684" lon="14.0366322"/>
-            <trkpt lat="46.0649321" lon="14.0368272"/>
-            <trkpt lat="46.0649151" lon="14.0369736"/>
-            <trkpt lat="46.0648904" lon="14.0371374"/>
-            <trkpt lat="46.0649245" lon="14.0371611"/>
-            <trkpt lat="46.0649917" lon="14.03715"/>
-            <trkpt lat="46.06503" lon="14.0371109"/>
-            <trkpt lat="46.0650825" lon="14.0370415"/>
-            <trkpt lat="46.065144" lon="14.0369466"/>
-            <trkpt lat="46.0652518" lon="14.0367872"/>
-            <trkpt lat="46.0653006" lon="14.036749"/>
-            <trkpt lat="46.0653796" lon="14.0367272"/>
-            <trkpt lat="46.0654301" lon="14.0365864"/>
-            <trkpt lat="46.0655479" lon="14.036318"/>
-            <trkpt lat="46.0656529" lon="14.0359189"/>
-            <trkpt lat="46.0657102" lon="14.0356575"/>
-            <trkpt lat="46.0657213" lon="14.0353846"/>
-            <trkpt lat="46.0656465" lon="14.0350199"/>
-            <trkpt lat="46.0655718" lon="14.0347309"/>
-            <trkpt lat="46.0655543" lon="14.03463"/>
-            <trkpt lat="46.0655702" lon="14.0344993"/>
-            <trkpt lat="46.0656131" lon="14.0343961"/>
-            <trkpt lat="46.0656609" lon="14.0343456"/>
-            <trkpt lat="46.0658264" lon="14.0344832"/>
-            <trkpt lat="46.0660332" lon="14.0346759"/>
-            <trkpt lat="46.0661526" lon="14.0346782"/>
-            <trkpt lat="46.0662608" lon="14.0345085"/>
-            <trkpt lat="46.0663181" lon="14.0342906"/>
-            <trkpt lat="46.0663738" lon="14.0341943"/>
-            <trkpt lat="46.0665202" lon="14.0340933"/>
-            <trkpt lat="46.0666841" lon="14.0338571"/>
-            <trkpt lat="46.0668909" lon="14.033497"/>
-            <trkpt lat="46.0669959" lon="14.0332287"/>
-            <trkpt lat="46.0669864" lon="14.0329627"/>
-            <trkpt lat="46.0670246" lon="14.0328251"/>
-            <trkpt lat="46.0673572" lon="14.0326301"/>
-            <trkpt lat="46.0675879" lon="14.0325567"/>
-            <trkpt lat="46.0677123" lon="14.0324562"/>
-            <trkpt lat="46.067808" lon="14.0321752"/>
-            <trkpt lat="46.0678902" lon="14.032004"/>
-            <trkpt lat="46.0679522" lon="14.0319126"/>
-            <trkpt lat="46.0680285" lon="14.0318294"/>
-            <trkpt lat="46.0681686" lon="14.0316953"/>
-            <trkpt lat="46.0682464" lon="14.0316434"/>
-            <trkpt lat="46.068292" lon="14.0316358"/>
-            <trkpt lat="46.0685521" lon="14.0314882"/>
-            <trkpt lat="46.0686552" lon="14.031413"/>
-            <trkpt lat="46.0686716" lon="14.031401"/>
-            <trkpt lat="46.0687483" lon="14.0312802"/>
-            <trkpt lat="46.0687977" lon="14.0311069"/>
-            <trkpt lat="46.0688279" lon="14.0309041"/>
-            <trkpt lat="46.0688383" lon="14.0308075"/>
-            <trkpt lat="46.0688167" lon="14.0307467"/>
-            <trkpt lat="46.0689106" lon="14.0303445"/>
-            <trkpt lat="46.0691207" lon="14.0299867"/>
-            <trkpt lat="46.0693721" lon="14.0295005"/>
-            <trkpt lat="46.0695025" lon="14.0291152"/>
-            <trkpt lat="46.0696998" lon="14.0285418"/>
-            <trkpt lat="46.0698335" lon="14.0280785"/>
-            <trkpt lat="46.0698494" lon="14.0277437"/>
-            <trkpt lat="46.0699672" lon="14.0274088"/>
-            <trkpt lat="46.0703101" lon="14.0269659"/>
-            <trkpt lat="46.070319" lon="14.0269544"/>
-            <trkpt lat="46.0705276" lon="14.026759"/>
-            <trkpt lat="46.070575" lon="14.026695"/>
-            <trkpt lat="46.0705969" lon="14.0266348"/>
-            <trkpt lat="46.0706292" lon="14.0265068"/>
-            <trkpt lat="46.0706449" lon="14.0264074"/>
-            <trkpt lat="46.0706264" lon="14.0262586"/>
-            <trkpt lat="46.0705863" lon="14.0261251"/>
-            <trkpt lat="46.0705527" lon="14.0260465"/>
+            <trkpt lat="46.3704924" lon="14.5495851"/>
+            <trkpt lat="46.3704606" lon="14.5497864"/>
+            <trkpt lat="46.3705029" lon="14.5499178"/>
+            <trkpt lat="46.3705694" lon="14.5501077"/>
+            <trkpt lat="46.3706109" lon="14.5503113"/>
+            <trkpt lat="46.370585" lon="14.5505347"/>
+            <trkpt lat="46.3706601" lon="14.5506919"/>
+            <trkpt lat="46.3707317" lon="14.5507799"/>
+            <trkpt lat="46.3708067" lon="14.5508184"/>
+            <trkpt lat="46.3710028" lon="14.5511097"/>
+            <trkpt lat="46.3710794" lon="14.5513784"/>
+            <trkpt lat="46.3710929" lon="14.5517037"/>
+            <trkpt lat="46.3711278" lon="14.5518838"/>
+            <trkpt lat="46.3711557" lon="14.5520813"/>
+            <trkpt lat="46.3711243" lon="14.5522692"/>
+            <trkpt lat="46.3711942" lon="14.5523572"/>
+            <trkpt lat="46.3712683" lon="14.552502"/>
+            <trkpt lat="46.3713029" lon="14.552679"/>
+            <trkpt lat="46.3712918" lon="14.55284"/>
+            <trkpt lat="46.371272" lon="14.5529097"/>
+            <trkpt lat="46.3713103" lon="14.5530009"/>
+            <trkpt lat="46.3712609" lon="14.5531886"/>
+            <trkpt lat="46.3711918" lon="14.5533442"/>
+            <trkpt lat="46.3711239" lon="14.5535427"/>
+            <trkpt lat="46.371103" lon="14.5536661"/>
+            <trkpt lat="46.3711128" lon="14.5539289"/>
+            <trkpt lat="46.3711067" lon="14.5541435"/>
+            <trkpt lat="46.3711437" lon="14.554283"/>
+            <trkpt lat="46.3711979" lon="14.5543366"/>
+            <trkpt lat="46.3711881" lon="14.5546102"/>
+            <trkpt lat="46.3711881" lon="14.5547551"/>
+            <trkpt lat="46.3712476" lon="14.5550542"/>
+            <trkpt lat="46.3712387" lon="14.5552003"/>
+            <trkpt lat="46.3712955" lon="14.555372"/>
+            <trkpt lat="46.3712585" lon="14.5555812"/>
+            <trkpt lat="46.371214" lon="14.5557904"/>
+            <trkpt lat="46.3710475" lon="14.5559138"/>
+            <trkpt lat="46.3709809" lon="14.5560479"/>
+            <trkpt lat="46.3708994" lon="14.5563215"/>
+            <trkpt lat="46.3708106" lon="14.5565414"/>
+            <trkpt lat="46.3707524" lon="14.5567277"/>
+            <trkpt lat="46.3707813" lon="14.5568112"/>
+            <trkpt lat="46.3707569" lon="14.5570929"/>
+            <trkpt lat="46.3706081" lon="14.5572696"/>
+            <trkpt lat="46.3705326" lon="14.5573719"/>
+            <trkpt lat="46.3705591" lon="14.5574435"/>
+            <trkpt lat="46.3705493" lon="14.5576288"/>
+            <trkpt lat="46.3706471" lon="14.5576947"/>
+            <trkpt lat="46.3706477" lon="14.5578165"/>
+            <trkpt lat="46.3707018" lon="14.5579688"/>
+            <trkpt lat="46.3707149" lon="14.5580636"/>
+            <trkpt lat="46.3707625" lon="14.5580595"/>
+            <trkpt lat="46.370813" lon="14.5582687"/>
+            <trkpt lat="46.3708735" lon="14.5584136"/>
+            <trkpt lat="46.3709216" lon="14.5584672"/>
+            <trkpt lat="46.370924" lon="14.5585799"/>
+            <trkpt lat="46.3709661" lon="14.5588481"/>
+            <trkpt lat="46.3711511" lon="14.5589071"/>
+            <trkpt lat="46.3712127" lon="14.5588696"/>
+            <trkpt lat="46.3713399" lon="14.5588964"/>
+            <trkpt lat="46.3713695" lon="14.5590841"/>
+            <trkpt lat="46.37142" lon="14.5591968"/>
+            <trkpt lat="46.3714139" lon="14.5592826"/>
+            <trkpt lat="46.3713917" lon="14.5593524"/>
+            <trkpt lat="46.3714731" lon="14.5594382"/>
+            <trkpt lat="46.3714509" lon="14.5595079"/>
+            <trkpt lat="46.3715139" lon="14.5595616"/>
+            <trkpt lat="46.3714731" lon="14.5596206"/>
+            <trkpt lat="46.371557" lon="14.559803"/>
+            <trkpt lat="46.3715027" lon="14.5598244"/>
+            <trkpt lat="46.3714842" lon="14.559921"/>
+            <trkpt lat="46.3714435" lon="14.5599532"/>
+            <trkpt lat="46.3714842" lon="14.55998"/>
+            <trkpt lat="46.3714472" lon="14.5600068"/>
+            <trkpt lat="46.3714681" lon="14.5600444"/>
+            <trkpt lat="46.3713954" lon="14.5601034"/>
+            <trkpt lat="46.3715176" lon="14.5601678"/>
+            <trkpt lat="46.3715052" lon="14.5602965"/>
+            <trkpt lat="46.371673" lon="14.5603609"/>
+            <trkpt lat="46.3716064" lon="14.5604682"/>
+            <trkpt lat="46.3716939" lon="14.5605272"/>
+            <trkpt lat="46.3717494" lon="14.5606023"/>
+            <trkpt lat="46.3718359" lon="14.5606023"/>
+            <trkpt lat="46.3719308" lon="14.5606666"/>
+            <trkpt lat="46.3719012" lon="14.5607954"/>
+            <trkpt lat="46.372032" lon="14.5608115"/>
+            <trkpt lat="46.3719789" lon="14.5609295"/>
+            <trkpt lat="46.372027" lon="14.5609295"/>
+            <trkpt lat="46.3720024" lon="14.5609778"/>
+            <trkpt lat="46.3720455" lon="14.5610207"/>
+            <trkpt lat="46.3721085" lon="14.5609831"/>
+            <trkpt lat="46.3721566" lon="14.5610422"/>
+            <trkpt lat="46.3721307" lon="14.561128"/>
+            <trkpt lat="46.3721455" lon="14.5611977"/>
+            <trkpt lat="46.3721973" lon="14.5612031"/>
+            <trkpt lat="46.372238" lon="14.5612728"/>
+            <trkpt lat="46.3722713" lon="14.561423"/>
+            <trkpt lat="46.3723009" lon="14.5615464"/>
+            <trkpt lat="46.3723356" lon="14.5616265"/>
         </trkseg>
     </trk>
     <trk>
