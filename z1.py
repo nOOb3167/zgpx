@@ -48,6 +48,10 @@ def vec_unit(a: List):
 def vec_dot(a: List, b: List):
     return (a[0] * b[0]) + (a[1] * b[1])
 
+def vec_isclose(a_, b_):
+    a, b = mkvec(a_), mkvec(b_)
+    return isclose(a[0], b[0], rel_tol=0.0, abs_tol=1e-4) and isclose(a[1], b[1], rel_tol=0.0, abs_tol=1e-4)
+
 def mkvec(pnt):
     if isinstance(pnt, GPXTrackPoint) or isinstance(pnt, GPXWaypoint):
         return [pnt.latitude, pnt.longitude]

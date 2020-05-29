@@ -8,8 +8,8 @@ import gpxpy
 from gpxpy.gpx import (GPX, GPXTrack, GPXTrackPoint, GPXTrackSegment,
                        GPXWaypoint, NearestLocationData)
 
-from z1 import (chk_waypoints, gpx_insert_lseg_closest_inplace, mkpt, mkvec, Pos, tra_seg, vec_t,
-    WANT_DIST_M_DEFAULT, wpt_t)
+from z1 import (chk_waypoints, gpx_insert_lseg_closest_inplace, mkpt, mkvec, Pos, tra_seg,
+    vec_isclose, vec_t, WANT_DIST_M_DEFAULT, wpt_t)
 
 assert mkpt('46.5017784 15.5537548').latitude == GPXTrackPoint(46.5017784, 15.5537548).latitude and \
     mkpt('46.5017784 15.5537548').longitude == GPXTrackPoint(46.5017784, 15.5537548).longitude
@@ -94,9 +94,6 @@ def n3():
         for k in kwp:
             gpx_insert_lseg_closest_inplace(gp2, GPXTrackPoint(k.latitude, k.longitude, name='dummy_koca'))
 
-        def vec_isclose(a_, b_):
-            a, b = mkvec(a_), mkvec(b_)
-            return isclose(a[0], b[0], rel_tol=0.0, abs_tol=1e-4) and isclose(a[1], b[1], rel_tol=0.0, abs_tol=1e-4)
         def clst(wps, a):
             for wp in wps:
                 if vec_isclose(wp, a):
@@ -120,11 +117,17 @@ def n3():
                     lstn.append(cure)
                     cure = E(pnt=p, brk=[], tra=[])
                 elif p.name == 'dummy_breaker':
+                    cure.tra.append(p)
                     cure.brk.append(p)
                 else:
                     cure.tra.append(p)
-        for x in lstn:
-            print(f'{clst(kwp, x.pnt)}  @  {len(x.brk)}')
+        trunam = [clst(kwp, x.pnt) for x in lstn]
+        for l, t in zip(lstn, trunam):
+            l.pnt = t
+
+        print(lstn[63].tra)
+        print(lstn[63].pnt.name)
+        print(trunam[63])
 
     with open(root.joinpath('zzz_generated_3.gpx'), 'w', encoding='UTF-8') as f2:
         xm2 = gp2.to_xml()
