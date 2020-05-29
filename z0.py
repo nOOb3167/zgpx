@@ -82,50 +82,59 @@ def chk_waypoints_insert_inplace(gp2: GPX, wpname: str, want_dist_m=WANT_DIST_M_
         seg = tra_seg(tra)
         seg.points.insert(d.idx + 1, GPXTrackPoint(d.vec[0], d.vec[1], name=wpname))
 
+@dataclass
+class E():
+    pnt: wpt_t
+    brk: List[wpt_t]
+    tra: List[wpt_t]
+
+def eform(gp2: GPX):
+    kwp = koce_waypoints()
+
+    gp2.waypoints.extend(kwp)
+
+    chk_waypoints_insert_inplace(gp2, 'dummy_breaker')
+
+    for k in kwp:
+        gpx_insert_lseg_closest_inplace(gp2, GPXTrackPoint(k.latitude, k.longitude, name='dummy_koca'))
+
+    def clst(a):
+        nonlocal kwp
+        for wp in kwp:
+            if vec_isclose(wp, a):
+                return wp
+        raise NotImplementedError()
+
+    lstn: List[E] = []
+
+    for t in gp2.tracks:
+        s = tra_seg(t)
+        cure = E(pnt=None, brk=[], tra=[])
+        for p in s.points:
+            if p.name == 'dummy_koca':
+                cure.pnt = p
+                lstn.append(cure)
+                cure = E(pnt=p, brk=[], tra=[])
+            elif p.name == 'dummy_breaker':
+                cure.tra.append(p)
+                cure.brk.append(p)
+            else:
+                cure.tra.append(p)
+    trunam = [clst(x.pnt) for x in lstn]
+    for l, t in zip(lstn, trunam):
+        l.pnt = t
+
+    return lstn
+
 def n3():
     with open(root.joinpath('Slovenska_Planinska_Pot_Formatted.gpx'), encoding='UTF-8') as f:
-        kwp = koce_waypoints()
-
         gp2 = gpxpy.parse(f)
-        gp2.waypoints.extend(kwp)
 
-        chk_waypoints_insert_inplace(gp2, 'dummy_breaker')
+    lstn = eform(gp2)
 
-        for k in kwp:
-            gpx_insert_lseg_closest_inplace(gp2, GPXTrackPoint(k.latitude, k.longitude, name='dummy_koca'))
-
-        def clst(wps, a):
-            for wp in wps:
-                if vec_isclose(wp, a):
-                    return wp
-            raise NotImplementedError()
-
-        @dataclass
-        class E():
-            pnt: wpt_t
-            brk: List[wpt_t]
-            tra: List[wpt_t]
-
-        lstn: List[E] = []
-
-        for t in gp2.tracks:
-            s = tra_seg(t)
-            cure = E(pnt=None, brk=[], tra=[])
-            for p in s.points:
-                if p.name == 'dummy_koca':
-                    cure.pnt = p
-                    lstn.append(cure)
-                    cure = E(pnt=p, brk=[], tra=[])
-                elif p.name == 'dummy_breaker':
-                    cure.tra.append(p)
-                    cure.brk.append(p)
-                else:
-                    cure.tra.append(p)
-        trunam = [clst(kwp, x.pnt) for x in lstn]
-        for l, t in zip(lstn, trunam):
-            l.pnt = t
-
-        print(f'{lstn[63].tra=}\n{lstn[63].pnt.name=}\n{len(lstn[63].tra)=}')
+    print(f'{lstn[63].tra=}\n{lstn[63].pnt.name=}\n{len(lstn[63].tra)=}')
+    for x in range(60, 69):
+        print(f'{lstn[x].pnt.name=}')
 
     with open(root.joinpath('zzz_generated_3.gpx'), 'w', encoding='UTF-8') as f2:
         xm2 = gp2.to_xml()
