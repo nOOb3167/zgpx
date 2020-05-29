@@ -100,7 +100,8 @@ def pnt_lineseg_dist(pt_, segS_, segE_):
         return vec_len(vec_sub(pt, segE))
     else:
         b_unit = vec_unit(b)
-        return vec_len(vec_sub(pt, vec_scale(b_unit, a_proj_b__magnitude)))
+        #return vec_len(vec_sub(pt, vec_scale(b_unit, a_proj_b__magnitude)))
+        return vec_len(vec_sub(a, vec_scale(b_unit, a_proj_b__magnitude)))
 
 class Pos():
     tra: GPXTrack
