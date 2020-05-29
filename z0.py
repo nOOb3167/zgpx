@@ -125,9 +125,7 @@ def n3():
         for l, t in zip(lstn, trunam):
             l.pnt = t
 
-        print(lstn[63].tra)
-        print(lstn[63].pnt.name)
-        print(trunam[63])
+        print(f'{lstn[63].tra=}\n{lstn[63].pnt.name=}\n{len(lstn[63].tra)=}')
 
     with open(root.joinpath('zzz_generated_3.gpx'), 'w', encoding='UTF-8') as f2:
         xm2 = gp2.to_xml()
