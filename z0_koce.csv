@@ -22,6 +22,7 @@ latitude, longitude, name
 46.423422, 14.743398, Koca Na Grohatu Pod Raduho
 46.398503, 14.707058, Robanov Kot (Guest House Pri Rogovilcu)
 46.355693, 14.639715, Kocbekov Dom Na Korosici
+46.361750, 14.635450, SYNTHETIC0
 46.363906, 14.637479, Ojstrica (Vrh)
 46.359191, 14.597424, Kamniska Koca Na Kamniskem Sedlu
 46.369500, 14.587690, Frischaufov Dom Na Okreslju
@@ -31,25 +32,30 @@ latitude, longitude, name
 46.353412, 14.547312, Bivak Pavla Kamperla
 46.344071, 14.546871, Cojzova Koca Na Kokrskem Sedlu
 46.357238, 14.535277, Grintovec (Vrh)
+46.361050, 14.525990, SYNTHETIC1
 46.358623, 14.521926, Jezerska Kocna (Vrh)
 46.369906, 14.535968, Ceska Koca Na Spodnjih Ravneh
 46.393421, 14.499710, Zgornje Jezersko
+46.346160, 14.414740, SYNTHETIC2
 46.337066, 14.416949, Planinski Dom Na Kaliscu
 46.350264, 14.404727, Storzic (Vrh)
 46.359299, 14.389741, Dom Pod Storzicem
 46.348613, 14.363613, Tolsti Vrh (Vrh)
 46.351711, 14.333365, Koca Na Kriski Gori
 46.361629, 14.307688, Trzic
+46.359360, 14.296280, SYNTHETIC3
 46.358758, 14.277523, Brezje Pri Trzicu
 46.376189, 14.245999, Koca Na Dobrci
 46.410189, 14.243355, Koca Na Prevalu
 46.421945, 14.231660, Begunjscica (Vrh)
 46.417807, 14.212270, Roblekov Dom Na Begunjscici
 46.429013, 14.233584, Planinski Dom Na Zelenici
+46.432810, 14.176190, SYNTHETIC4
 46.431348, 14.174853, Presernova Koca Na Stolu
 46.434069, 14.173846, Stol (Vrh)
 46.460394, 14.130974, Sedlo Seca (Sedlo)
 46.483960, 14.094175, Sedlo Kocna (Sedlo)
+46.485560, 14.061380, SYNTHETIC5
 46.485893, 14.061937, Koca Na Golici
 46.491403, 14.053591, Golica (Vrh)
 46.480743, 14.019703, Rozca Mokotova Bajta
