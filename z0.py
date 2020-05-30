@@ -1,6 +1,6 @@
 from csv import DictReader, register_dialect
 from dataclasses import dataclass
-from math import floor, inf, isclose, sqrt
+from math import ceil, floor, inf, isclose, sqrt
 from pathlib import Path
 from pprint import pprint
 from typing import Callable, List, Tuple, Union
@@ -129,10 +129,40 @@ def eform(gp2: GPX):
 
 class PriPage():
     d: List[str]
-    num_colrow: Tuple[int, int] = (8, 10)
-
+    ncol: int = 800
+    nrow: int = 10
+    colsep: str = ' _ '
     def __init__(self):
         self.d = []
+    def output(self):
+        def colrowseq(nr_):
+            nc = -1
+            while True:
+                nc = nc + 1
+                for x in range(nr_):
+                    yield (nc, x)
+        def padto(s: str, to: int):
+            return s + ' ' * (max(0, to - len(s)))
+            
+        nr = len(self.d)
+        nc_ = ceil(nr / self.nrow)
+        nr_ = min(nr, self.nrow)
+        assert nc_ <= self.ncol
+
+        grid = [['' for _ in range(nr_)] for c in range(nc_)]
+
+        for x in zip(colrowseq(nr_), range(nr)):
+            grid[x[0][0]][x[0][1]] = self.d[x[1]]
+
+        longest = [len(max(c, key=lambda x: len(x))) for c in grid]
+
+        for c in range(len(grid)):
+            for r in range(len(grid[c])):
+                grid[c][r] = padto(grid[c][r], longest[c]) + self.colsep
+
+        rows = [''.join(x) for x in zip(*grid)]
+
+        return '\n'.join(rows)
     @classmethod
     def fmt_deg_dms(cls, dd: float):
         d, m, sd = dd2dms(dd)
@@ -165,7 +195,11 @@ def n3():
 
     pp = PriPage()
     pp.add_cure(lstn[60])
-    pprint(pp.d)
+    #pprint(pp.d)
+    out = pp.output()
+    print(out)
+    with open(root.joinpath('zzz_generated_4.txt'), 'w', encoding='UTF-8') as f2:
+        f2.write(out)
 
     with open(root.joinpath('zzz_generated_3.gpx'), 'w', encoding='UTF-8') as f2:
         xm2 = gp2.to_xml()
