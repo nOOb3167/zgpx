@@ -2,13 +2,14 @@ from csv import DictReader, register_dialect
 from dataclasses import dataclass
 from math import floor, inf, isclose, sqrt
 from pathlib import Path
+from pprint import pprint
 from typing import Callable, List, Tuple, Union
 
 import gpxpy
 from gpxpy.gpx import (GPX, GPXTrack, GPXTrackPoint, GPXTrackSegment,
                        GPXWaypoint, NearestLocationData)
 
-from z1 import (chk_waypoints, gpx_insert_lseg_closest_inplace, mkpt, mkvec, Pos, tra_seg,
+from z1 import (chk_waypoints, dd2dms, gpx_insert_lseg_closest_inplace, mkpt, mkvec, Pos, tra_seg,
     vec_isclose, vec_t, WANT_DIST_M_DEFAULT, wpt_t)
 
 assert mkpt('46.5017784 15.5537548').latitude == GPXTrackPoint(46.5017784, 15.5537548).latitude and \
@@ -126,6 +127,32 @@ def eform(gp2: GPX):
 
     return lstn
 
+class PriPage():
+    d: List[str]
+    num_colrow: Tuple[int, int] = (8, 10)
+
+    def __init__(self):
+        self.d = []
+    @classmethod
+    def fmt_deg_dms(cls, dd: float):
+        d, m, sd = dd2dms(dd)
+        return f'{int(d):02} {int(m):02} {round(sd, ndigits=1):04.1f}'
+    @classmethod
+    def fmt_wpt(cls, wpt: wpt_t):
+        return f'{cls.fmt_deg_dms(wpt.latitude)} N {cls.fmt_deg_dms(wpt.longitude)} E'
+    @classmethod
+    def fmt_cure(cls, cure: E):
+        d: List[str] = []
+        d.append(f'{cure.pnt.name}')
+        for pnt in cure.tra:
+            if pnt.name == 'dummy_breaker':
+                pass
+            d.append(f'{cls.fmt_wpt(pnt)}')
+        return d
+    def add_cure(self, cure: E):
+        self.d.extend(PriPage.fmt_cure(cure))
+        
+
 def n3():
     with open(root.joinpath('Slovenska_Planinska_Pot_Formatted.gpx'), encoding='UTF-8') as f:
         gp2 = gpxpy.parse(f)
@@ -136,9 +163,15 @@ def n3():
     for x in range(60, 69):
         print(f'{lstn[x].pnt.name=}')
 
+    pp = PriPage()
+    pp.add_cure(lstn[60])
+    pprint(pp.d)
+
     with open(root.joinpath('zzz_generated_3.gpx'), 'w', encoding='UTF-8') as f2:
         xm2 = gp2.to_xml()
         f2.write(xm2)
 
 if __name__ == '__main__':
+    #z = PriPage.fmt_wpt(GPXWaypoint(45.589385, 13.861001))
+    #print(f'{z=}')
     n3()
