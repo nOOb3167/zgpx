@@ -132,7 +132,7 @@ class PriPage():
     ncol: int
     nrow: int
     colsep: str
-    def __init__(self, /, ncol=800, nrow=50, colsep=' _ '):
+    def __init__(self, /, ncol=5, nrow=50, colsep=' _ '):
         self.d = []
         self.ncol = ncol
         self.nrow = nrow
@@ -150,7 +150,6 @@ class PriPage():
         nr = len(self.d)
         nc_ = ceil(nr / self.nrow)
         nr_ = min(nr, self.nrow)
-        assert nc_ <= self.ncol
 
         grid = [['' for _ in range(nr_)] for c in range(nc_)]
 
@@ -163,9 +162,13 @@ class PriPage():
             for r in range(len(grid[c])):
                 grid[c][r] = padto(grid[c][r], longest[c]) + self.colsep
 
-        rows = [''.join(x) for x in zip(*grid)]
+        pages = []
+        for c in range(0, ceil(nc_ / self.ncol) * self.ncol, self.ncol):
+            rows = [''.join(x) for x in zip(*grid[c:c+self.ncol])]
+            page = '\n'.join(rows)
+            pages.append(page)
 
-        return '\n'.join(rows)
+        return '\n======CONT======\n'.join(pages)
     @classmethod
     def fmt_deg_dms(cls, dd: float):
         d, m, sd = dd2dms(dd)
