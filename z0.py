@@ -19,6 +19,9 @@ register_dialect('kocedial', 'excel', skipinitialspace=True)
 
 root = Path('.').resolve()
 
+formfeed = '\x0c'
+n_formfeed = '\x0c\n'
+
 frag = '''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <gpx xmlns="http://www.topografix.com/GPX/1/1" creator="" version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
     <trk>
@@ -132,7 +135,7 @@ class PriPage():
     ncol: int
     nrow: int
     colsep: str
-    def __init__(self, /, ncol=5, nrow=50, colsep=' _ '):
+    def __init__(self, /, ncol=5, nrow=90, colsep=' _ '):
         self.d = []
         self.ncol = ncol
         self.nrow = nrow
@@ -168,7 +171,7 @@ class PriPage():
             page = '\n'.join(rows)
             pages.append(page)
 
-        return '\n======CONT======\n'.join(pages)
+        return n_formfeed.join(pages)
     @classmethod
     def fmt_deg_dms(cls, dd: float):
         d, m, sd = dd2dms(dd)
@@ -206,7 +209,7 @@ def n3():
         pp.add_cure(lstn[x])
         outs.append(pp.output())
     with open(root.joinpath('zzz_generated_4.txt'), 'w', encoding='UTF-8') as f2:
-        f2.write('\n\n\n\n'.join(outs))
+        f2.write(n_formfeed.join(outs))
 
     with open(root.joinpath('zzz_generated_3.gpx'), 'w', encoding='UTF-8') as f2:
         xm2 = gp2.to_xml()
