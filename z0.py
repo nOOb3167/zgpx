@@ -129,11 +129,14 @@ def eform(gp2: GPX):
 
 class PriPage():
     d: List[str]
-    ncol: int = 800
-    nrow: int = 10
-    colsep: str = ' _ '
-    def __init__(self):
+    ncol: int
+    nrow: int
+    colsep: str
+    def __init__(self, /, ncol=800, nrow=50, colsep=' _ '):
         self.d = []
+        self.ncol = ncol
+        self.nrow = nrow
+        self.colsep = colsep
     def output(self):
         def colrowseq(nr_):
             nc = -1
@@ -169,15 +172,16 @@ class PriPage():
         return f'{int(d):02} {int(m):02} {round(sd, ndigits=1):04.1f}'
     @classmethod
     def fmt_wpt(cls, wpt: wpt_t):
-        return f'{cls.fmt_deg_dms(wpt.latitude)} N {cls.fmt_deg_dms(wpt.longitude)} E'
+        return f'{cls.fmt_deg_dms(wpt.latitude)} {cls.fmt_deg_dms(wpt.longitude)}'
     @classmethod
     def fmt_cure(cls, cure: E):
         d: List[str] = []
         d.append(f'{cure.pnt.name}')
         for pnt in cure.tra:
+            l = f'{cls.fmt_wpt(pnt)}'
             if pnt.name == 'dummy_breaker':
-                pass
-            d.append(f'{cls.fmt_wpt(pnt)}')
+                l = l + ' CP'
+            d.append(l)
         return d
     def add_cure(self, cure: E):
         self.d.extend(PriPage.fmt_cure(cure))
@@ -193,13 +197,13 @@ def n3():
     for x in range(60, 69):
         print(f'{lstn[x].pnt.name=}')
 
-    pp = PriPage()
-    pp.add_cure(lstn[60])
-    #pprint(pp.d)
-    out = pp.output()
-    print(out)
+    outs = []
+    for x in range(60, 69):
+        pp = PriPage()
+        pp.add_cure(lstn[x])
+        outs.append(pp.output())
     with open(root.joinpath('zzz_generated_4.txt'), 'w', encoding='UTF-8') as f2:
-        f2.write(out)
+        f2.write('\n\n\n\n'.join(outs))
 
     with open(root.joinpath('zzz_generated_3.gpx'), 'w', encoding='UTF-8') as f2:
         xm2 = gp2.to_xml()
