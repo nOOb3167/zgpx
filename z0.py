@@ -64,7 +64,7 @@ def vode_waypoints():
 with open(root.joinpath('Slovenska_Planinska_Pot_Formatted.gpx'), encoding='UTF-8') as f:
     gp2 = gpxpy.parse(f)
     gp2.waypoints.extend(koce_waypoints())
-    gp2.waypoints.extend(chk_waypoints(gp2))
+    gp2.waypoints.extend(chk_waypoints(gp2, 1000))
     xm2 = gp2.to_xml()
     with open(root.joinpath('zzz_generated_2.gpx'), 'w', encoding='UTF-8') as f2:
         f2.write(xm2)
