@@ -45,6 +45,35 @@ def stitchhorz(img, layer):
 
     pdb.gimp_display_new(img_new)
 
+def stitch2vert(img, layer):
+    ll = img.layers; ll.reverse()
+    llE = [a[1] for a in filter(lambda x: (x[0] % 2) == 0, enumerate(ll))]
+    llO = [a[1] for a in filter(lambda x: (x[0] % 2) == 1, enumerate(ll))]
+
+    shorter = min([llE, llO], key=lambda x: len(x))
+    longer = max([llE, llO], key=lambda x: len(x))
+    for x in range(len(shorter), len(longer)):
+        shorter.append(longer[-1])
+
+    llP = zip(llE, llO)
+    iwh__ = [max([max([lp[0].width, lp[1].width]) for lp in llP]), max([lp[0].height + lp[1].height for lp in llP])]
+    pdb.gimp_message('f ' + str(iwh__))
+    img_new = pdb.gimp_image_new(iwh__[0], iwh__[1], RGB)
+
+    for lp in llP:
+        iwh = [max([l.width for l in lp]), sum([l.height for l in lp])]
+        lay_new = pdb.gimp_layer_new(img_new, iwh[0], iwh[1], RGB_IMAGE, 'base', 100, LAYER_MODE_NORMAL)
+        pdb.gimp_layer_add_alpha(lay_new)
+        pdb.gimp_image_add_layer(img_new, lay_new, 0)
+
+        hpos = 0
+        for l in lp:
+            copypaste(img, l, img_new, lay_new, [l.width, l.height], [0, 0], [0, hpos])
+            hpos = hpos + l.height
+
+    pdb.gimp_display_new(img_new)
+
 register("python_fu_z0", "", "", "", "", "", "<Image>/Filters/z0", "*", [], [], z0)
-register("python_fu_stitchhorz", "", "", "", "", "", "<Image>/Filters/z0stitchhorz", "*", [], [], stitchhorz)
+register("python_fu_shorz", "", "", "", "", "", "<Image>/Filters/z0shorz", "*", [], [], stitchhorz)
+register("python_fu_s2vert", "", "", "", "", "", "<Image>/Filters/z0s2vert", "*", [], [], stitch2vert)
 main()
