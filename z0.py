@@ -184,6 +184,7 @@ class PriPage():
     def fmt_cure(self, cure: E):
         d: List[str] = []
         d.append(f'{cure.pnt.name}')
+        d.append(f'{self.fmt_wpt(cure.pnt)}' + ' AT')
         for pnt in cure.tra:
             iscp = pnt.name == 'dummy_breaker'
             l = f'{self.fmt_wpt(pnt)}' + (' CP' if iscp else '')
