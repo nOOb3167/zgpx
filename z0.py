@@ -64,12 +64,12 @@ def vode_waypoints():
 with open(root.joinpath('Slovenska_Planinska_Pot_Formatted.gpx'), encoding='UTF-8') as f:
     gp2 = gpxpy.parse(f)
     gp2.waypoints.extend(koce_waypoints())
-    gp2.waypoints.extend(chk_waypoints(gp2, 1000))
+    gp2.waypoints.extend(chk_waypoints(gp2, want_dist_m=1000))
     xm2 = gp2.to_xml()
     with open(root.joinpath('zzz_generated_2.gpx'), 'w', encoding='UTF-8') as f2:
         f2.write(xm2)
 
-def chk_waypoints_insert_inplace(gp2: GPX, wpname: str, want_dist_m=WANT_DIST_M_DEFAULT):
+def chk_waypoints_insert_inplace(gp2: GPX, wpname: str, /, want_dist_m=WANT_DIST_M_DEFAULT):
     @dataclass
     class D():
         vec: vec_t
@@ -78,7 +78,7 @@ def chk_waypoints_insert_inplace(gp2: GPX, wpname: str, want_dist_m=WANT_DIST_M_
     def wf(pos: Pos, vec: vec_t):
         return D(vec, pos.idx, pos.tra_idx)
 
-    chk_: List[D] = chk_waypoints(gp2, want_dist_m, way_fact=wf)
+    chk_: List[D] = chk_waypoints(gp2, want_dist_m=want_dist_m, way_fact=wf)
     chk = sorted(chk_, key=lambda x: (x.tra_idx, x.idx,), reverse=True)
 
     for d in chk:
@@ -97,7 +97,7 @@ def eform(gp2: GPX):
 
     gp2.waypoints.extend(kwp)
 
-    chk_waypoints_insert_inplace(gp2, 'dummy_breaker')
+    chk_waypoints_insert_inplace(gp2, 'dummy_breaker', want_dist_m=1000)
 
     for k in kwp:
         gpx_insert_lseg_closest_inplace(gp2, GPXTrackPoint(k.latitude, k.longitude, name='dummy_koca'))

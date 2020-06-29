@@ -146,7 +146,7 @@ class Pos():
         v = vec_add(vS, vQ)
         return way_fact(self, v)
 
-def chk_waypoints(gpx: GPX, want_dist_m=WANT_DIST_M_DEFAULT, /, way_fact: Callable[[Pos, vec_t], Any] = wpt_t_default):
+def chk_waypoints(gpx: GPX, /, want_dist_m=WANT_DIST_M_DEFAULT, way_fact: Callable[[Pos, vec_t], Any] = wpt_t_default):
     wpt: List[Any] = []
     remain = None
     def remain_reset():
