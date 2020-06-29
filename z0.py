@@ -135,11 +135,13 @@ class PriPage():
     ncol: int
     nrow: int
     colsep: str
-    def __init__(self, /, ncol=5, nrow=90, colsep=' _ '):
+    cponly: bool
+    def __init__(self, /, ncol=5, nrow=90, colsep=' _ ', cponly=False):
         self.d = []
         self.ncol = ncol
         self.nrow = nrow
         self.colsep = colsep
+        self.cponly = cponly
     def output(self):
         def colrowseq(nr_):
             nc = -1
@@ -179,18 +181,17 @@ class PriPage():
     @classmethod
     def fmt_wpt(cls, wpt: wpt_t):
         return f'{cls.fmt_deg_dms(wpt.latitude)} {cls.fmt_deg_dms(wpt.longitude)}'
-    @classmethod
-    def fmt_cure(cls, cure: E):
+    def fmt_cure(self, cure: E):
         d: List[str] = []
         d.append(f'{cure.pnt.name}')
         for pnt in cure.tra:
-            l = f'{cls.fmt_wpt(pnt)}'
-            if pnt.name == 'dummy_breaker':
-                l = l + ' CP'
-            d.append(l)
+            iscp = pnt.name == 'dummy_breaker'
+            l = f'{self.fmt_wpt(pnt)}' + (' CP' if iscp else '')
+            if iscp or not self.cponly:
+                d.append(l)
         return d
     def add_cure(self, cure: E):
-        self.d.extend(PriPage.fmt_cure(cure))
+        self.d.extend(self.fmt_cure(cure))
         
 
 def n3():
@@ -199,13 +200,13 @@ def n3():
 
     lstn = eform(gp2)
 
-    print(f'{lstn[63].tra=}\n{lstn[63].pnt.name=}\n{len(lstn[63].tra)=}')
-    for x in range(60, 69):
-        print(f'{lstn[x].pnt.name=}')
+    # print(f'{lstn[63].tra=}\n{lstn[63].pnt.name=}\n{len(lstn[63].tra)=}')
+    # for x in range(60, 69):
+    #     print(f'{lstn[x].pnt.name=}')
 
     outs = []
-    for x in range(60, 69):
-        pp = PriPage()
+    for x in range(len(lstn)):
+        pp = PriPage(cponly=True)
         pp.add_cure(lstn[x])
         outs.append(pp.output())
     with open(root.joinpath('zzz_generated_4.txt'), 'w', encoding='UTF-8') as f2:
