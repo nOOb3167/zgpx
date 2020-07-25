@@ -2,3 +2,4 @@
 /route*.xcf
 /__pycache__
 /misc
+/.venv
