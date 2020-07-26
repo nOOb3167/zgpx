@@ -49,13 +49,16 @@ frag = '''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 </gpx>
 '''
 
-def koce_waypoints():
+def csv_waypoints(p: Path, t='trasa'):
     acc = []
-    with open(root.joinpath('z0_koce.csv')) as f:
+    with open(p) as f:
         reader = DictReader(f, dialect='kocedial')
         for r in reader:
-            acc.append(GPXWaypoint(latitude=float(r['latitude']), longitude=float(r['longitude']), name=r['name'], symbol='http://maps.me/placemarks/placemark-red.png', type='trasa'))
+            acc.append(GPXWaypoint(latitude=float(r['latitude']), longitude=float(r['longitude']), name=r['name'], symbol='http://maps.me/placemarks/placemark-red.png', type=t))
     return acc
+
+def koce_waypoints():
+    return csv_waypoints(root.joinpath('z0_koce.csv'))
 
 def vode_waypoints():
     with open(root.joinpath('z SPP Voda.gpx'), encoding='UTF-8') as f:
