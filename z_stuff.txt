@@ -2,3 +2,5 @@ https://epicmountainadventures.wordpress.com/2018/10/28/slovenska-planinska-pot-
 
 https://www.openstreetmap.org/browse/relation/6443086
 http://overpass-turbo.eu/
+
+vscode Pylance extension

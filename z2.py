@@ -1,8 +1,7 @@
-from csv import DictReader, register_dialect
 from pathlib import Path
-from z0 import *
+from z0 import csv_waypoints
 
-register_dialect('kocedial', 'excel', skipinitialspace=True)
+import gpxpy
 
 root = Path('.').resolve()
 

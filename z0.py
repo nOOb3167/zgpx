@@ -1,13 +1,11 @@
-from csv import DictReader, register_dialect
+from csv import DictReader, excel
 from dataclasses import dataclass
-from math import ceil, floor, inf, isclose, sqrt
+from math import ceil
 from pathlib import Path
-from pprint import pprint
-from typing import Callable, List, Tuple, Union
+from typing import List
 
 import gpxpy
-from gpxpy.gpx import (GPX, GPXTrack, GPXTrackPoint, GPXTrackSegment,
-                       GPXWaypoint, NearestLocationData)
+from gpxpy.gpx import GPX, GPXTrackPoint, GPXWaypoint
 
 from z1 import (chk_waypoints, dd2dms, gpx_insert_lseg_closest_inplace, mkpt, mkvec, Pos, tra_seg,
     vec_isclose, vec_t, WANT_DIST_M_DEFAULT, wpt_t)
@@ -15,7 +13,10 @@ from z1 import (chk_waypoints, dd2dms, gpx_insert_lseg_closest_inplace, mkpt, mk
 assert mkpt('46.5017784 15.5537548').latitude == GPXTrackPoint(46.5017784, 15.5537548).latitude and \
     mkpt('46.5017784 15.5537548').longitude == GPXTrackPoint(46.5017784, 15.5537548).longitude
 
-register_dialect('kocedial', 'excel', skipinitialspace=True)
+class KoceDial(excel):
+    def __init__(self):
+        super().__init__()
+        self.skipinitialspace = True
 
 root = Path('.').resolve()
 
@@ -52,7 +53,7 @@ frag = '''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 def csv_waypoints(p: Path, t='trasa'):
     acc = []
     with open(p) as f:
-        reader = DictReader(f, dialect='kocedial')
+        reader = DictReader(f, dialect=KoceDial())
         for r in reader:
             acc.append(GPXWaypoint(latitude=float(r['latitude']), longitude=float(r['longitude']), name=r['name'], symbol='http://maps.me/placemarks/placemark-red.png', type=t))
     return acc
