@@ -76,6 +76,9 @@
         <cmt />
         <desc />
     </wpt>
+    <wpt lat="43.191885" lon="-4.960519">
+        <name>Refugio de Llago / Vega Huerta</name>
+    </wpt>
     <trk>
         <name>El Anillo de Picos (completo)</name>
         <cmt />

@@ -162,6 +162,9 @@ def chk_waypoints(gpx: GPX, /, want_dist_m=WANT_DIST_M_DEFAULT, way_fact: Callab
                 wpt.append(pos.waypointat(way_fact))
     return wpt
 
+def pnt_filter_closer_than(a: List[wpt_t], cmp: List[wpt_t], len_):
+    return [x for x in a if not any([x.distance_2d(y) < len_ for y in cmp])]
+
 if __name__ == '__main__':
     import sys
     print(sys.argv)
@@ -177,3 +180,6 @@ if __name__ == '__main__':
     w_ = mkvec(w)
     print(q_)
     print(w_)
+
+    print(pnt_filter_closer_than([ta], [tb], 1000))
+    print(pnt_filter_closer_than([ta], [tb], 1500))

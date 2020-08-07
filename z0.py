@@ -53,7 +53,8 @@ frag = '''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 def csv_waypoints(p: Path, t='trasa'):
     acc = []
     with open(p) as f:
-        reader = DictReader(f, dialect=KoceDial())
+        nocomm = filter(lambda row: not len(row) or row[0] != '#', f)
+        reader = DictReader(nocomm, dialect=KoceDial())
         for r in reader:
             acc.append(GPXWaypoint(latitude=float(r['latitude']), longitude=float(r['longitude']), name=r['name'], symbol='http://maps.me/placemarks/placemark-red.png', type=t))
     return acc
