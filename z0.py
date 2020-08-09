@@ -206,23 +206,18 @@ def n3():
 
     lstn = eform(gp2, kwp)
 
-
-    # print(f'{lstn[63].tra=}\n{lstn[63].pnt.name=}\n{len(lstn[63].tra)=}')
-    # for x in range(60, 69):
-    #     print(f'{lstn[x].pnt.name=}')
-
     def allinone():
         pp = PriPage(cponly=True)
-        for x in range(len(lstn)):
-            pp.add_cure(lstn[x])
+        for x in lstn:
+            pp.add_cure(x)
         return pp.output()
     with open(root.joinpath('zzz_generated_5.txt'), 'w', encoding='UTF-8') as f2:
         f2.write(allinone())
 
     outs = []
-    for x in range(len(lstn)):
+    for x in lstn:
         pp = PriPage(cponly=True)
-        pp.add_cure(lstn[x])
+        pp.add_cure(x)
         outs.append(pp.output())
     with open(root.joinpath('zzz_generated_4.txt'), 'w', encoding='UTF-8') as f2:
         f2.write(n_formfeed.join(outs))
