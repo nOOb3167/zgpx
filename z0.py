@@ -97,7 +97,14 @@ class E():
     brk: List[wpt_t]
     tra: List[wpt_t]
 
-def eform(gp2: GPX, kwp: List[wpt_t]):
+def eform_pre(gp2: GPX, kwp: List[wpt_t], want_dist_m=WANT_DIST_M_DEFAULT):
+    chk_waypoints_insert_inplace(gp2, 'dummy_breaker', want_dist_m=want_dist_m)
+    for k in kwp:
+        gpx_insert_lseg_closest_inplace(gp2, GPXTrackPoint(k.latitude, k.longitude, name='dummy_koca'))
+
+def eform(gp2: GPX, kwp: List[wpt_t], want_dist_m=WANT_DIST_M_DEFAULT):
+    eform_pre(gp2, kwp, want_dist_m)
+
     def clst(a):
         nonlocal kwp
         for wp in kwp:
@@ -195,11 +202,7 @@ def n3():
     with open(root.joinpath('Slovenska_Planinska_Pot_Formatted.gpx'), encoding='UTF-8') as f:
         gp2 = gpxpy.parse(f)
 
-    kwp = koce_waypoints()
-    gp2.waypoints.extend(kwp)
-    chk_waypoints_insert_inplace(gp2, 'dummy_breaker', want_dist_m=1000)
-    for k in kwp:
-        gpx_insert_lseg_closest_inplace(gp2, GPXTrackPoint(k.latitude, k.longitude, name='dummy_koca'))
+    gp2.waypoints.extend(kwp := koce_waypoints())
 
     lstn = eform(gp2, kwp)
 
