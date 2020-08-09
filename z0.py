@@ -2,7 +2,7 @@ from csv import DictReader, excel
 from dataclasses import dataclass
 from math import ceil
 from pathlib import Path
-from typing import List
+from typing import Callable, List
 
 import gpxpy
 from gpxpy.gpx import GPX, GPXTrackPoint, GPXWaypoint
@@ -22,33 +22,8 @@ root = Path('.').resolve()
 
 formfeed = '\x0c'
 n_formfeed = '\x0c\n'
-
-frag = '''<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<gpx xmlns="http://www.topografix.com/GPX/1/1" creator="" version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
-    <trk>
-        <name>SPP-2 (03) Slovenska planinska pot</name>
-        <cmt>Slovenska planinska pot</cmt>
-        <trkseg>
-            <trkpt lat="46.5019439" lon="15.5567654"/>
-            <trkpt lat="46.5018308" lon="15.5564691"/>
-            <trkpt lat="46.5018133" lon="15.5563194"/>
-            <trkpt lat="46.5017912" lon="15.556148"/>
-            <trkpt lat="46.5016229" lon="15.5556807"/>
-            <trkpt lat="46.5016096" lon="15.5556273"/>
-            <trkpt lat="46.5014884" lon="15.5552088"/>
-            <trkpt lat="46.5015444" lon="15.5550629"/>
-            <trkpt lat="46.5015366" lon="15.5549891"/>
-            <trkpt lat="46.5015588" lon="15.554955"/>
-            <trkpt lat="46.5015744" lon="15.5548338"/>
-            <trkpt lat="46.5015731" lon="15.5547069"/>
-            <trkpt lat="46.5016753" lon="15.5544166"/>
-            <trkpt lat="46.5017784" lon="15.5537548"/>
-            <trkpt lat="46.5018456" lon="15.5531275"/>
-            <trkpt lat="46.5019852" lon="15.5525686"/>
-        </trkseg>
-    </trk>
-</gpx>
-'''
+ROUND_DMS_SD_FN_DEFAULT=lambda sd: format(round(sd, ndigits=1), '04.1f')
+ROUND_DMS_SD_FN_CUT=lambda sd: format(round(sd), '02.0f')
 
 def csv_waypoints(p: Path, t='trasa'):
     acc = []
@@ -134,17 +109,23 @@ def eform(gp2: GPX, kwp: List[wpt_t], want_dist_m=WANT_DIST_M_DEFAULT):
     return lstn
 
 class PriPage():
+    CP_SUFFIX = ''
+    AT_SUFFIX = ''
+
     d: List[str]
     ncol: int
     nrow: int
     colsep: str
     cponly: bool
-    def __init__(self, /, ncol=5, nrow=90, colsep=' _ ', cponly=False):
+    round_dms_sd_fn: Callable[[float], str]
+
+    def __init__(self, /, ncol=5, nrow=90, colsep=' _ ', cponly=False, round_dms_sd_fn = ROUND_DMS_SD_FN_DEFAULT):
         self.d = []
         self.ncol = ncol
         self.nrow = nrow
         self.colsep = colsep
         self.cponly = cponly
+        self.round_dms_sd_fn = round_dms_sd_fn
     def output(self):
         def colrowseq(nr_):
             nc = -1
@@ -177,22 +158,20 @@ class PriPage():
             pages.append(page)
 
         return n_formfeed.join(pages)
-    @classmethod
-    def fmt_deg_dms(cls, dd: float):
+    def fmt_deg_dms(self, dd: float):
         d, m, sd = dd2dms(dd)
-        return f'{int(d):02} {int(m):02} {round(sd, ndigits=1):04.1f}'
-    @classmethod
-    def fmt_wpt(cls, wpt: wpt_t):
-        return f'{cls.fmt_deg_dms(wpt.latitude)} {cls.fmt_deg_dms(wpt.longitude)}'
+        return f'{int(d):02} {int(m):02} {self.round_dms_sd_fn(sd)}'
+    def fmt_wpt(self, wpt: wpt_t):
+        return f'{self.fmt_deg_dms(wpt.latitude)} {self.fmt_deg_dms(wpt.longitude)}'
     def fmt_cure(self, cure: E):
         d: List[str] = []
         d.append(f'{cure.pnt.name}')
-        d.append(f'{self.fmt_wpt(cure.pnt)}' + ' AT')
         for pnt in cure.tra:
             iscp = pnt.name == 'dummy_breaker'
-            l = f'{self.fmt_wpt(pnt)}' + (' CP' if iscp else '')
+            l = f'{self.fmt_wpt(pnt)}' + (self.CP_SUFFIX if iscp else '')
             if iscp or not self.cponly:
                 d.append(l)
+        d.append(f'{self.fmt_wpt(cure.pnt)}' + self.AT_SUFFIX)
         return d
     def add_cure(self, cure: E):
         self.d.extend(self.fmt_cure(cure))
@@ -206,13 +185,11 @@ def n3():
 
     lstn = eform(gp2, kwp)
 
-    def allinone():
+    with open(root.joinpath('zzz_generated_5.txt'), 'w', encoding='UTF-8') as f2:
         pp = PriPage(cponly=True)
         for x in lstn:
             pp.add_cure(x)
-        return pp.output()
-    with open(root.joinpath('zzz_generated_5.txt'), 'w', encoding='UTF-8') as f2:
-        f2.write(allinone())
+        f2.write(pp.output())
 
     outs = []
     for x in lstn:
