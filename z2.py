@@ -6,7 +6,7 @@ import gpxpy
 
 PICOS_WANT_DIST_M = 500
 THIN_WANT_DIST_M = 500/3
-NOTCLOSER_DIST_M = 100
+NOTCLOSER_DIST_M = 0
 
 root = Path('.').resolve()
 
