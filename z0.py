@@ -1,13 +1,13 @@
 from csv import DictReader, excel
 from dataclasses import dataclass
-from math import ceil
+from math import ceil, isclose
 from pathlib import Path
 from typing import Callable, List
 
 import gpxpy
 from gpxpy.gpx import GPX, GPXTrackPoint, GPXWaypoint
 
-from z1 import (chk_waypoints, dd2dms, gpx_insert_lseg_closest_inplace, mkpt, mkvec, Pos, tra_seg,
+from z1 import (EQU_PNT_PNT_FN, chk_waypoints, dd2dms, gpx_insert_lseg_closest_inplace, mkpt, Pos, tra_seg,
     vec_isclose, vec_t, WANT_DIST_M_DEFAULT, wpt_t)
 
 assert mkpt('46.5017784 15.5537548').latitude == GPXTrackPoint(46.5017784, 15.5537548).latitude and \
@@ -173,8 +173,32 @@ class PriPage():
                 d.append(l)
         d.append(f'{self.fmt_wpt(cure.pnt)}' + self.AT_SUFFIX)
         return d
+    def fmt_cure_thin_dbg(self, cure: E, cwps: List[E]):
+        cwps_brk = [(brk, i1, i2) for i1, cwp in enumerate(cwps) for i2, brk in enumerate(cwp.brk)]
+        for pnt in cure.brk:
+            dd = self.fmt_wpt(pnt)
+            iscp = pnt.name == 'dummy_breaker'
+            isthin = any([EQU_PNT_PNT_FN(pnt, brk) for brk, _, _ in cwps_brk])
+            if isthin:
+                z = list(filter(lambda x: EQU_PNT_PNT_FN(pnt, x[0]), cwps_brk))
+        return []
+    def fmt_cure_thin(self, cure: E, cwps: List[E]):
+        d: List[str] = []
+        d.append(f'{cure.pnt.name}')
+        cwps_brk = [brk for cwp in cwps for brk in cwp.brk]
+        for pnt in cure.brk:
+            dd = self.fmt_wpt(pnt)
+            iscp = pnt.name == 'dummy_breaker'
+            isthin = any([EQU_PNT_PNT_FN(pnt, brk) for brk in cwps_brk])
+            l = f'{self.fmt_wpt(pnt)}' + (self.CP_SUFFIX if iscp else '') + ('XXX' if isthin else '')
+            if iscp or not self.cponly:
+                d.append(l)
+        d.append(f'{self.fmt_wpt(cure.pnt)}' + self.AT_SUFFIX)
+        return d
     def add_cure(self, cure: E):
         self.d.extend(self.fmt_cure(cure))
+    def add_cure_thin(self, cure: E, cwps: List[E]):
+        self.d.extend(self.fmt_cure_thin(cure, cwps))
         
 
 def n3():
@@ -204,6 +228,4 @@ def n3():
         f2.write(xm2)
 
 if __name__ == '__main__':
-    #z = PriPage.fmt_wpt(GPXWaypoint(45.589385, 13.861001))
-    #print(f'{z=}')
     n3()

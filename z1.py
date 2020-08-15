@@ -2,9 +2,13 @@ from math import inf, isclose, sqrt
 
 from gpxpy.gpx import (GPX, GPXTrack, GPXTrackPoint, GPXTrackSegment,
                        GPXWaypoint)
-from typing import Any, Callable, List, Tuple, Union
+from typing import Any, Callable, List, Tuple, TypeVar, Union
+
+T = TypeVar('T')
 
 WANT_DIST_M_DEFAULT = 2000
+EQU_PNT_TOLERANCE_M=10
+EQU_PNT_PNT_FN=lambda a, b: isclose(a.distance_2d(b), 0.0, rel_tol=0.0, abs_tol=EQU_PNT_TOLERANCE_M) # a: wpt_t, b: wpt_t, distance_2d(wpt_t)->meters
 
 wpt_t = Union[GPXWaypoint, GPXTrackPoint]
 vec_t = Union[wpt_t, list, tuple]
@@ -48,9 +52,9 @@ def vec_unit(a: List):
 def vec_dot(a: List, b: List):
     return (a[0] * b[0]) + (a[1] * b[1])
 
-def vec_isclose(a_, b_):
+def vec_isclose(a_, b_, tol_=1e-4):
     a, b = mkvec(a_), mkvec(b_)
-    return isclose(a[0], b[0], rel_tol=0.0, abs_tol=1e-4) and isclose(a[1], b[1], rel_tol=0.0, abs_tol=1e-4)
+    return isclose(a[0], b[0], rel_tol=0.0, abs_tol=tol_) and isclose(a[1], b[1], rel_tol=0.0, abs_tol=tol_)
 
 def mkvec(pnt):
     if isinstance(pnt, GPXTrackPoint) or isinstance(pnt, GPXWaypoint):
@@ -128,16 +132,16 @@ class Pos():
         self.pos = 0.0
     def try_advance(self, remain):
         endpos = min(self.pos + remain, self._dist_seg)
-        remain -= (endpos - self.pos)
+        remain -= endpos - self.pos
         self.pos = endpos
         if self.atend_pos():
             if not self.atend_idx():
                 self.nextidx()
-        return remain
+        return remain if not isclose(remain, 0.0, rel_tol=0.0, abs_tol=1e-2) else 0
     def atend_idx(self):
         return self.idx == len(tra_seg(self.tra).points) - 2
     def atend_pos(self):
-        return not (self.pos < self._dist_seg)
+        return isclose(self.pos, self._dist_seg, rel_tol=0.0, abs_tol=1e-2)
     def atend_idxpos(self):
         return self.atend_idx() and self.atend_pos()
     def waypointat(self, way_fact):
@@ -146,8 +150,8 @@ class Pos():
         v = vec_add(vS, vQ)
         return way_fact(self, v)
 
-def chk_waypoints(gpx: GPX, /, want_dist_m=WANT_DIST_M_DEFAULT, way_fact: Callable[[Pos, vec_t], Any] = wpt_t_default):
-    wpt: List[Any] = []
+def chk_waypoints(gpx: GPX, /, want_dist_m=WANT_DIST_M_DEFAULT, way_fact: Callable[[Pos, vec_t], T] = wpt_t_default):
+    wpt: List[T] = []
     remain = None
     def remain_reset():
         nonlocal remain
