@@ -165,13 +165,13 @@ class PriPage():
         return f'{self.fmt_deg_dms(wpt.latitude)} {self.fmt_deg_dms(wpt.longitude)}'
     def fmt_cure(self, cure: E):
         d: List[str] = []
-        d.append(f'{cure.pnt.name}')
         for pnt in cure.tra:
             iscp = pnt.name == 'dummy_breaker'
             l = f'{self.fmt_wpt(pnt)}' + (self.CP_SUFFIX if iscp else '')
             if iscp or not self.cponly:
                 d.append(l)
         d.append(f'{self.fmt_wpt(cure.pnt)}' + self.AT_SUFFIX)
+        d.append(f'{cure.pnt.name}')
         return d
     def fmt_cure_thin_dbg(self, cure: E, cwps: List[E]):
         cwps_brk = [(brk, i1, i2) for i1, cwp in enumerate(cwps) for i2, brk in enumerate(cwp.brk)]
@@ -184,7 +184,6 @@ class PriPage():
         return []
     def fmt_cure_thin(self, cure: E, cwps: List[E]):
         d: List[str] = []
-        d.append(f'{cure.pnt.name}')
         cwps_brk = [brk for cwp in cwps for brk in cwp.brk]
         for pnt in cure.brk:
             dd = self.fmt_wpt(pnt)
@@ -194,6 +193,7 @@ class PriPage():
             if iscp or not self.cponly:
                 d.append(l)
         d.append(f'{self.fmt_wpt(cure.pnt)}' + self.AT_SUFFIX)
+        d.append(f'{cure.pnt.name}')
         return d
     def add_cure(self, cure: E):
         self.d.extend(self.fmt_cure(cure))
