@@ -2,6 +2,12 @@
 
 # https://www.gimp.org/docs/python/index.html
 
+# http://gimpchat.com/viewtopic.php?f=9&t=5709
+#   None vs 0 in API functions
+
+# gimp_image_insert_layer: The layer type must be compatible with the image base type
+#   fff = pdb.gimp_layer_new(img, enufw, enufh, RGBA_IMAGE, 'dummy', 100, LAYER_MODE_NORMAL)
+
 # i0 = gimp.image_list()[0]
 
 from gimpfu import *
@@ -28,6 +34,11 @@ def pas(img, lay, x, y, w, h):
     sel(img, x, y, w, h)
     pdb.gimp_floating_sel_anchor(pdb.gimp_edit_paste(lay, True))
 
+def addlayer(img, w, h):
+    lay = pdb.gimp_layer_new(img, w, h, RGB_IMAGE, 'dummy', 100, LAYER_MODE_NORMAL)
+    pdb.gimp_image_insert_layer(img, lay, None, -1)
+    return lay
+
 def sorted_png_fnam(dir):
     def fnam_sort(l):
         def tryint(s):
@@ -43,11 +54,14 @@ def sorted_png_fnam(dir):
 
 def pairwise(img, dir):
     fnam = sorted_png_fnam(dir)
-    for ix, fn in enumerate(fnam):
-        path = DirRoot + fn
-        i0 = pdb.gimp_file_load(path, path, run_mode=RUN_NONINTERACTIVE)
-        cop(img_lay(i0, 0))
-        pas(img, img_lay(img, 0), 32, 32+ix*128, 128, 128)
+    imgs = [pdb.gimp_file_load(DirRoot + fn, DirRoot + fn, run_mode=RUN_NONINTERACTIVE) for fn in fnam]
+    enufw = max([img_lay(x, 0).width for x in imgs])
+    enufh = max([img_lay(x, 0).height for x in imgs]) * 2
+    fff = addlayer(img, enufw, enufh)
+    for ix, i0 in enumerate(imgs):
+        l0 = img_lay(i0, 0)
+        cop(l0)
+        pas(img, fff, 32, 32+ix*128, 128, 128)
 
 def doit(img, lay):
     pairwise(img, DirRoot)
