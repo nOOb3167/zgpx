@@ -16,68 +16,68 @@
     <wpt lat="43.173019" lon="-4.869172">
         <ele>2059.8</ele>
         <time>2017-06-27T20:38:06Z</time>
-        <name>Refugio Collado Jermoso (2.064m)</name>
+        <name>Ref Collado Jermoso</name>
         <cmt />
         <desc />
     </wpt>
     <wpt lat="43.166120" lon="-5.005131">
         <ele>.0</ele>
         <time>2017-06-28T19:55:55Z</time>
-        <name>Refugio Vegabaño (1.432m)</name>
+        <name>Ref Vegabaño</name>
         <cmt />
         <desc />
     </wpt>
     <wpt lat="43.176114" lon="-4.834134">
         <ele>.0</ele>
         <time>2017-06-27T20:47:15Z</time>
-        <name>Refugio Cabaña Verónica (2.325m)</name>
+        <name>Ref Cabaña Verónica</name>
         <cmt />
         <desc />
     </wpt>
     <wpt lat="43.214015" lon="-4.712139">
         <ele>1720.0</ele>
         <time>2017-06-27T21:03:05Z</time>
-        <name>Refugio Casetón de Andara (1.720m)</name>
+        <name>Ref Casetón Andara</name>
         <cmt />
         <desc />
     </wpt>
     <wpt lat="43.227002" lon="-4.792597">
         <ele>.0</ele>
         <time>2017-06-27T21:06:51Z</time>
-        <name>Refugio La Terenosa (1.300m)</name>
+        <name>Ref La Terenosa</name>
         <cmt />
         <desc />
     </wpt>
     <wpt lat="43.202824" lon="-4.821293">
         <ele>.0</ele>
         <time>2017-06-27T21:11:04Z</time>
-        <name>Refugio Vega de Urriellu (1.960m)</name>
+        <name>Ref Vega Urriellu</name>
         <cmt />
         <desc />
     </wpt>
     <wpt lat="43.213589" lon="-4.856852">
         <ele>.0</ele>
         <time>2017-06-27T21:14:44Z</time>
-        <name>Refugio Jou de los Cabrones (2.034m)</name>
+        <name>Ref Cabrones</name>
         <cmt />
         <desc />
     </wpt>
     <wpt lat="43.242827" lon="-4.923048">
         <ele>.0</ele>
         <time>2017-06-28T19:42:45Z</time>
-        <name>Refugio Vega de Ario (1.630m)</name>
+        <name>Ref Vega de Ario</name>
         <cmt />
         <desc />
     </wpt>
     <wpt lat="43.234953" lon="-4.992895">
         <ele>.0</ele>
         <time>2017-06-28T19:47:26Z</time>
-        <name>Refugio Vegarredonda (1.470m)</name>
+        <name>Ref Vegarredonda</name>
         <cmt />
         <desc />
     </wpt>
     <wpt lat="43.191885" lon="-4.960519">
-        <name>Refugio de Llago / Vega Huerta</name>
+        <name>Ref Vega Huerta</name>
     </wpt>
     <trk>
         <name>El Anillo de Picos (completo)</name>

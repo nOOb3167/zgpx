@@ -189,7 +189,7 @@ class PriPage():
             dd = self.fmt_wpt(pnt)
             iscp = pnt.name == 'dummy_breaker'
             isthin = any([EQU_PNT_PNT_FN(pnt, brk) for brk in cwps_brk])
-            l = f'{self.fmt_wpt(pnt)}' + (self.CP_SUFFIX if iscp else '') + ('XXX' if isthin else '')
+            l = f'{self.fmt_wpt(pnt)}' + (self.CP_SUFFIX if iscp else '') + (' X' if isthin else '')
             if iscp or not self.cponly:
                 d.append(l)
         d.append(f'{self.fmt_wpt(cure.pnt)}' + self.AT_SUFFIX)
