@@ -1,11 +1,5 @@
 46°03'29.6"N 14°30'44.0"E  Ljubljana Station
 46°13'51.0"N 14°27'19.5"E  Ljubljana Airport
-
-Koper - Ljubljana Airport
-    Train Koper 05:25 - Ljubljana 07:49
-    Bus Ljubljana 08:10 - Airport ??
-        Bus line 'Arriva Alpetour' every hour at x:10 @47min, x:30 @30min
-
 43°18'20.0"N 2°54'20.9"W  Bilbao Airport
     43°17'38.4"N 2°53'57.0"W  Rdbt
     43°17'31.6"N 2°55'01.1"W  Rdbt
@@ -18,6 +12,11 @@ Koper - Ljubljana Airport
 43°13'57.1"N 4°44'49.7"W  Sotres (Bar)
 43°14'13.1"N 4°49'37.4"W  Bulnes (Bar)
 43°09'05.2"N 4°55'03.3"W  Posada De Valdeon (Bar)
+
+Koper - Ljubljana Airport
+    Train Koper 05:25 - Ljubljana 07:49
+    Bus Ljubljana 08:10 - Airport ??
+        Bus line 'Arriva Alpetour' every hour at x:10 @47min, x:30 @30min
 
 Bilbao Airport - Bilbao San Mames Station
     Bus line 'BizkaiBus' every hour at x:00 @(30-45min), x:30 @(30-45min) (range 08:00 - 23:00)
@@ -48,12 +47,16 @@ Santander Bus Station - Potes / Fuente De
 	LMXJV laborables = Mon-Fri except public holidays
 	SD y Festivos = Saturday, Sunday and Public Holidays
 
+perdón - excuse me
 cuanto tiempo hasta la llegada - how long until arrival
 cuanto - how much
 cuesta - costs
 dónde está - where is
 cuando - when
 qué - what
+cómo - how
+tener / haber - have
+sitio / puesto - place
 entender - understand
 estación - station
 el tren - train
@@ -66,6 +69,8 @@ hora - hour
 mala vista - bad eyesight
 no puedo ver - can't see
 boleto de autobús - bus ticket
+salida - departure
+llegada - arrival
 
 Uno Dos Tres Cuatro Cinco Seis Siete Ocho Nueve Diez
 Once Doce Trece Catorce QuinceDieciséis Diecisiete Dieciocho Diecinueve Veinte
@@ -73,3 +78,11 @@ Veinti Treinta Cuarenta Cincuenta Sesenta Setenta Ochenta Noventa
 Cien Doscientos Mil Dos mil
 
 Cantabria Fuente De Zip 39588
+
+18.08.2020 from Ljubljana to Bilbao
+    13:30 Ljubljana - 14:50 Frankfurt - LH1459
+    20:50 Frankfurt - 22:55 Bilbao - LH1146
+31.08.2020 from Bilbao to Ljubljana
+    06:50 Bilbao - 08:55 Frankfurt - LH1147
+    11:40 Frankfurt - 12:55 Ljubljana - LH1458
+booking code RMPHJX - electronic ticket 220-2454246140

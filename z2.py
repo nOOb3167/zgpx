@@ -63,7 +63,7 @@ def n7():
     with open(root.joinpath('zzz_generated_el_6.txt'), 'w', encoding='UTF-8') as f2:
         f2.write(pp.output())
 
-    pp = PriPage(cponly=True, round_dms_sd_fn=ROUND_DMS_SD_FN_CUT)
+    pp = PriPage(cponly=True, round_dms_sd_fn=ROUND_DMS_SD_FN_CUT, ncol=4, nrow=72)
     for x in lst2:
         pp.add_cure_thin(x, lstn)
     with open(root.joinpath('zzz_generated_el_7.txt'), 'w', encoding='UTF-8') as f2:
