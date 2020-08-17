@@ -11,7 +11,7 @@
 # i0 = gimp.image_list()[0]
 
 from gimpfu import *
-import os, re, time
+import math, os, re, time
 
 DirRoot = 'C:/Users/Andrej/test/snw/maps/picos/'
 
@@ -23,6 +23,10 @@ def img_lay(img, idx):
     if len(img.layers) <= idx:
         exc('img_lay')
     return img.layers[idx]
+
+def img_wh(img):
+    lay = img_lay(img, 0)
+    return [lay.width, lay.height]
 
 def sel(img, x, y, w, h):
     pdb.gimp_image_select_rectangle(img, CHANNEL_OP_REPLACE, x, y, w, h)
@@ -57,11 +61,21 @@ def pairwise(img, dir):
     imgs = [pdb.gimp_file_load(DirRoot + fn, DirRoot + fn, run_mode=RUN_NONINTERACTIVE) for fn in fnam]
     enufw = max([img_lay(x, 0).width for x in imgs])
     enufh = max([img_lay(x, 0).height for x in imgs]) * 2
-    fff = addlayer(img, enufw, enufh)
-    for ix, i0 in enumerate(imgs):
-        l0 = img_lay(i0, 0)
-        cop(l0)
-        pas(img, fff, 32, 32+ix*128, 128, 128)
+    niter = int(math.ceil(len(imgs) / 2.0))
+    for ni in range(niter):
+        lll = addlayer(img, enufw, enufh)
+        i0 = imgs[2*ni+0] if 2*ni+0 < len(imgs) else None
+        i1 = imgs[2*ni+1] if 2*ni+1 < len(imgs) else None
+        if i1 is not None and i0 is None:
+            exc('???')
+        if i0 is not None:
+            wh0 = img_wh(i0)
+            cop(img_lay(i0, 0))
+            pas(img, lll, 0, 0, wh0[0], wh0[1])
+        if i1 is not None:
+            wh1 = img_wh(i1)
+            cop(img_lay(i1, 0))
+            pas(img, lll, 0, wh0[1], wh1[0], wh1[1])
 
 def doit(img, lay):
     pairwise(img, DirRoot)
