@@ -3,5 +3,9 @@
         "C:/Users/Andrej/test/snw/zgpx/src/",
         "${workspaceFolder}/src/"
     ],
-    "python.pythonPath": ".venv\\Scripts\\python.exe"
+    "python.pythonPath": ".venv\\Scripts\\python.exe",
+    "python.analysis.extraPaths": [
+        "C:/Users/Andrej/test/snw/zgpx/src/",
+        "${workspaceFolder}/src/"
+    ]
 }
