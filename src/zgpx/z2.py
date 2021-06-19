@@ -1,6 +1,6 @@
 from pathlib import Path
-from z1 import chk_waypoints, pnt_filter_closer_than
-from z0 import PriPage, ROUND_DMS_SD_FN_CUT, chk_waypoints_insert_inplace, csv_waypoints, eform
+from zgpx.z1 import chk_waypoints, pnt_filter_closer_than
+from zgpx.z0 import PriPage, ROUND_DMS_SD_FN_CUT, chk_waypoints_insert_inplace, csv_waypoints, eform
 
 import gpxpy
 

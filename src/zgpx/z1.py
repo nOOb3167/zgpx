@@ -1,19 +1,8 @@
-from math import inf, isclose, sqrt
-
 from gpxpy.gpx import (GPX, GPXTrack, GPXTrackPoint, GPXTrackSegment,
                        GPXWaypoint)
-from typing import Any, Callable, List, Tuple, TypeVar, Union
-
-T = TypeVar('T')
-
-WANT_DIST_M_DEFAULT = 2000
-EQU_PNT_TOLERANCE_M=10
-EQU_PNT_PNT_FN=lambda a, b: isclose(a.distance_2d(b), 0.0, rel_tol=0.0, abs_tol=EQU_PNT_TOLERANCE_M) # a: wpt_t, b: wpt_t, distance_2d(wpt_t)->meters
-
-wpt_t = Union[GPXWaypoint, GPXTrackPoint]
-vec_t = Union[wpt_t, list, tuple]
-
-wpt_t_default = lambda p,v: GPXWaypoint(v[0], v[1], symbol='http://maps.me/placemarks/placemark-green.png', type='checkpoint')
+from math import inf, isclose, sqrt
+from typing import Callable, List, Tuple, TypeVar
+from zgpx.util import vec_t, WANT_DIST_M_DEFAULT, wpt_t, wpt_t_default
 
 '''
 https://github.com/stesalati/TrackAnalyser/blob/master/bombo.py#L1047
@@ -150,8 +139,8 @@ class Pos():
         v = vec_add(vS, vQ)
         return way_fact(self, v)
 
-def chk_waypoints(gpx: GPX, /, want_dist_m=WANT_DIST_M_DEFAULT, way_fact: Callable[[Pos, vec_t], T] = wpt_t_default):
-    wpt: List[T] = []
+def chk_waypoints(gpx: GPX, /, want_dist_m=WANT_DIST_M_DEFAULT, way_fact: Callable[[Pos, vec_t], TypeVar('T')] = wpt_t_default):
+    wpt: List[TypeVar('T')] = []
     remain = None
     def remain_reset():
         nonlocal remain

@@ -1,70 +1,9 @@
-from csv import DictReader, excel
 from dataclasses import dataclass
-from math import ceil, isclose
-from pathlib import Path
+from gpxpy.gpx import GPX, GPXTrackPoint
+from math import ceil
 from typing import Callable, List
-
-import gpxpy
-from gpxpy.gpx import GPX, GPXTrackPoint, GPXWaypoint
-
-from z1 import (EQU_PNT_PNT_FN, chk_waypoints, dd2dms, gpx_insert_lseg_closest_inplace, mkpt, Pos, tra_seg,
-    vec_isclose, vec_t, WANT_DIST_M_DEFAULT, wpt_t)
-
-assert mkpt('46.5017784 15.5537548').latitude == GPXTrackPoint(46.5017784, 15.5537548).latitude and \
-    mkpt('46.5017784 15.5537548').longitude == GPXTrackPoint(46.5017784, 15.5537548).longitude
-
-class KoceDial(excel):
-    def __init__(self):
-        super().__init__()
-        self.skipinitialspace = True
-
-root = Path('.').resolve()
-
-formfeed = '\x0c'
-n_formfeed = '\x0c\n'
-ROUND_DMS_SD_FN_DEFAULT=lambda sd: format(round(sd, ndigits=1), '04.1f')
-ROUND_DMS_SD_FN_CUT=lambda sd: format(round(sd), '02.0f')
-
-def csv_waypoints(p: Path, t='trasa'):
-    acc = []
-    with open(p) as f:
-        nocomm = filter(lambda row: not len(row) or row[0] != '#', f)
-        reader = DictReader(nocomm, dialect=KoceDial())
-        for r in reader:
-            acc.append(GPXWaypoint(latitude=float(r['latitude']), longitude=float(r['longitude']), name=r['name'], symbol='http://maps.me/placemarks/placemark-red.png', type=t))
-    return acc
-
-def koce_waypoints():
-    return csv_waypoints(root.joinpath('z0_koce.csv'))
-
-def vode_waypoints():
-    with open(root.joinpath('z SPP Voda.gpx'), encoding='UTF-8') as f:
-        return [x for x in gpxpy.parse(f).waypoints]
-
-with open(root.joinpath('Slovenska_Planinska_Pot_Formatted.gpx'), encoding='UTF-8') as f:
-    gp2 = gpxpy.parse(f)
-    gp2.waypoints.extend(koce_waypoints())
-    gp2.waypoints.extend(chk_waypoints(gp2, want_dist_m=1000))
-    xm2 = gp2.to_xml()
-    with open(root.joinpath('zzz_generated_2.gpx'), 'w', encoding='UTF-8') as f2:
-        f2.write(xm2)
-
-def chk_waypoints_insert_inplace(gp2: GPX, wpname: str, /, want_dist_m=WANT_DIST_M_DEFAULT):
-    @dataclass
-    class D():
-        vec: vec_t
-        idx: int
-        tra_idx: int
-    def wf(pos: Pos, vec: vec_t):
-        return D(vec, pos.idx, pos.tra_idx)
-
-    chk_: List[D] = chk_waypoints(gp2, want_dist_m=want_dist_m, way_fact=wf)
-    chk = sorted(chk_, key=lambda x: (x.tra_idx, x.idx,), reverse=True)
-
-    for d in chk:
-        tra = gp2.tracks[d.tra_idx]
-        seg = tra_seg(tra)
-        seg.points.insert(d.idx + 1, GPXTrackPoint(d.vec[0], d.vec[1], name=wpname))
+from zgpx.util import EQU_PNT_PNT_FN, WANT_DIST_M_DEFAULT, dd2dms, gpx_insert_lseg_closest_inplace, n_formfeed, ROUND_DMS_SD_FN_DEFAULT, tra_seg, vec_isclose, wpt_t
+from zgpx.z0 import chk_waypoints_insert_inplace
 
 @dataclass
 class E():
@@ -199,33 +138,3 @@ class PriPage():
         self.d.extend(self.fmt_cure(cure))
     def add_cure_thin(self, cure: E, cwps: List[E]):
         self.d.extend(self.fmt_cure_thin(cure, cwps))
-        
-
-def n3():
-    with open(root.joinpath('Slovenska_Planinska_Pot_Formatted.gpx'), encoding='UTF-8') as f:
-        gp2 = gpxpy.parse(f)
-
-    gp2.waypoints.extend(kwp := koce_waypoints())
-
-    lstn = eform(gp2, kwp)
-
-    with open(root.joinpath('zzz_generated_5.txt'), 'w', encoding='UTF-8') as f2:
-        pp = PriPage(cponly=True)
-        for x in lstn:
-            pp.add_cure(x)
-        f2.write(pp.output())
-
-    outs = []
-    for x in lstn:
-        pp = PriPage(cponly=True)
-        pp.add_cure(x)
-        outs.append(pp.output())
-    with open(root.joinpath('zzz_generated_4.txt'), 'w', encoding='UTF-8') as f2:
-        f2.write(n_formfeed.join(outs))
-
-    with open(root.joinpath('zzz_generated_3.gpx'), 'w', encoding='UTF-8') as f2:
-        xm2 = gp2.to_xml()
-        f2.write(xm2)
-
-if __name__ == '__main__':
-    n3()
