@@ -1,7 +1,7 @@
 from pathlib import Path
+from zgpx.eform import eform, PriPage
 from zgpx.util import n_formfeed
-from zgpx.ptutil import chk_waypoints, pnt_filter_closer_than
-from zgpx.z0 import PriPage, ROUND_DMS_SD_FN_CUT, chk_waypoints_insert_inplace, csv_waypoints, eform
+from zgpx.ptutil import chk_waypoints, chk_waypoints_insert_inplace, csv_waypoints, pnt_filter_closer_than
 
 import gpxpy
 
@@ -9,7 +9,7 @@ PICOS_WANT_DIST_M = 500
 THIN_WANT_DIST_M = 500/3
 NOTCLOSER_DIST_M = 0
 
-root = Path('.').resolve()
+root = Path('..').resolve()
 
 def n2():
     with open(root / 'Slovenska_Planinska_Pot_Formatted.gpx', encoding='UTF-8') as f:
@@ -49,7 +49,7 @@ def n3():
 def n4():
     with open(root / 'el-anillo-de-picos-completo_formatted.gpx', encoding='UTF-8') as f:
         gp2 = gpxpy.parse(f)
-    gp2.waypoints.extend(csv_waypoints(root / 'z2_koce.csv')))
+    gp2.waypoints.extend(csv_waypoints(root / 'z2_koce.csv'))
     #gp2.waypoints.extend(chk_waypoints(gp2, want_dist_m=1000))
     with open(root / 'zzz_generated_el_2.gpx', 'w', encoding='UTF-8') as f2:
         f2.write(gp2.to_xml())
@@ -105,8 +105,12 @@ def n7():
     with open(root / 'zzz_generated_el_7.txt', 'w', encoding='UTF-8') as f2:
         f2.write(pp.output())
 
+def n8():
+    print('n8')
+
 if __name__ == '__main__':
-    #n4()
-    #n5()
-    #n6()
-    n7()
+    from argparse import ArgumentParser
+    parser = ArgumentParser()
+    parser.add_argument('--actn', default='n8')
+    args = parser.parse_args()
+    globals()[args.actn]()

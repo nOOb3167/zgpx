@@ -4,7 +4,7 @@ from gpxpy.gpx import (GPX, GPXTrack, GPXTrackPoint, GPXTrackSegment,
                        GPXWaypoint)
 from math import inf, isclose, sqrt
 from typing import Callable, List, Tuple, TypeVar
-from zgpx.util import vec_t, WANT_DIST_M_DEFAULT, wpt_t, wpt_t_default
+from zgpx.util import DictReader, vec_t, WANT_DIST_M_DEFAULT, wpt_t, wpt_t_default
 
 '''
 https://github.com/stesalati/TrackAnalyser/blob/master/bombo.py#L1047

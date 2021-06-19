@@ -1,5 +1,6 @@
 /zzz_generated*
 /route*.xcf
-/__pycache__
+__pycache__
 /misc
 /.venv
+/.vscode/launch.json
