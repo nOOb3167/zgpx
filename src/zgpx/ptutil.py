@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from gpxpy.gpx import (GPX, GPXTrack, GPXTrackPoint, GPXTrackSegment,
                        GPXWaypoint)
 from math import inf, isclose, sqrt
@@ -154,6 +155,23 @@ def chk_waypoints(gpx: GPX, /, want_dist_m=WANT_DIST_M_DEFAULT, way_fact: Callab
                 remain_reset()
                 wpt.append(pos.waypointat(way_fact))
     return wpt
+
+def chk_waypoints_insert_inplace(gp2: GPX, wpname: str, /, want_dist_m=WANT_DIST_M_DEFAULT):
+    @dataclass
+    class D():
+        vec: vec_t
+        idx: int
+        tra_idx: int
+    def wf(pos: Pos, vec: vec_t):
+        return D(vec, pos.idx, pos.tra_idx)
+
+    chk_: list[D] = chk_waypoints(gp2, want_dist_m=want_dist_m, way_fact=wf)
+    chk = sorted(chk_, key=lambda x: (x.tra_idx, x.idx,), reverse=True)
+
+    for d in chk:
+        tra = gp2.tracks[d.tra_idx]
+        seg = tra_seg(tra)
+        seg.points.insert(d.idx + 1, GPXTrackPoint(d.vec[0], d.vec[1], name=wpname))
 
 def pnt_filter_closer_than(a: List[wpt_t], cmp: List[wpt_t], len_):
     return [x for x in a if not any([x.distance_2d(y) < len_ for y in cmp])]

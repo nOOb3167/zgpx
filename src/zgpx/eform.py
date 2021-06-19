@@ -2,8 +2,8 @@ from dataclasses import dataclass
 from gpxpy.gpx import GPX, GPXTrackPoint
 from math import ceil
 from typing import Callable, List
+from zgpx.ptutil import chk_waypoints_insert_inplace
 from zgpx.util import EQU_PNT_PNT_FN, WANT_DIST_M_DEFAULT, dd2dms, gpx_insert_lseg_closest_inplace, n_formfeed, ROUND_DMS_SD_FN_DEFAULT, tra_seg, vec_isclose, wpt_t
-from zgpx.z0 import chk_waypoints_insert_inplace
 
 @dataclass
 class E():
