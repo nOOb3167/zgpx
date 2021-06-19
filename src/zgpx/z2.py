@@ -1,4 +1,5 @@
 from pathlib import Path
+from zgpx.util import n_formfeed
 from zgpx.ptutil import chk_waypoints, pnt_filter_closer_than
 from zgpx.z0 import PriPage, ROUND_DMS_SD_FN_CUT, chk_waypoints_insert_inplace, csv_waypoints, eform
 
@@ -9,6 +10,41 @@ THIN_WANT_DIST_M = 500/3
 NOTCLOSER_DIST_M = 0
 
 root = Path('.').resolve()
+
+def n2():
+    with open(root / 'Slovenska_Planinska_Pot_Formatted.gpx', encoding='UTF-8') as f:
+        gp2 = gpxpy.parse(f)
+        gp2.waypoints.extend(csv_waypoints(root / 'z0_koce.csv'))
+        gp2.waypoints.extend(chk_waypoints(gp2, want_dist_m=1000))
+        xm2 = gp2.to_xml()
+        with open(root / 'zzz_generated_2.gpx', 'w', encoding='UTF-8') as f2:
+            f2.write(xm2)
+
+def n3():
+    with open(root / 'Slovenska_Planinska_Pot_Formatted.gpx', encoding='UTF-8') as f:
+        gp2 = gpxpy.parse(f)
+
+    gp2.waypoints.extend(kwp := csv_waypoints(root / 'z0_koce.csv'))
+
+    lstn = eform(gp2, kwp)
+
+    with open(root / 'zzz_generated_5.txt', 'w', encoding='UTF-8') as f2:
+        pp = PriPage(cponly=True)
+        for x in lstn:
+            pp.add_cure(x)
+        f2.write(pp.output())
+
+    outs = []
+    for x in lstn:
+        pp = PriPage(cponly=True)
+        pp.add_cure(x)
+        outs.append(pp.output())
+    with open(root.joinpath('zzz_generated_4.txt'), 'w', encoding='UTF-8') as f2:
+        f2.write(n_formfeed.join(outs))
+
+    with open(root.joinpath('zzz_generated_3.gpx'), 'w', encoding='UTF-8') as f2:
+        xm2 = gp2.to_xml()
+        f2.write(xm2)
 
 def n4():
     with open(root.joinpath('el-anillo-de-picos-completo_formatted.gpx'), encoding='UTF-8') as f:

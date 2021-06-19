@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from pathlib import Path
 from gpxpy.gpx import (GPX, GPXTrack, GPXTrackPoint, GPXTrackSegment,
                        GPXWaypoint)
 from math import inf, isclose, sqrt
@@ -176,7 +177,14 @@ def chk_waypoints_insert_inplace(gp2: GPX, wpname: str, /, want_dist_m=WANT_DIST
 def pnt_filter_closer_than(a: List[wpt_t], cmp: List[wpt_t], len_):
     return [x for x in a if not any([x.distance_2d(y) < len_ for y in cmp])]
 
+def csv_waypoints(p: Path, t='trasa'):
+    with open(p, encoding='UTF-8') as f:
+        return [GPXWaypoint(latitude=float(r['latitude']), longitude=float(r['longitude']), name=r['name'], symbol='http://maps.me/placemarks/placemark-red.png', type=t) for r in DictReader(f)]
+
 if __name__ == '__main__':
+    assert mkpt('46.5017784 15.5537548').latitude == GPXTrackPoint(46.5017784, 15.5537548).latitude and \
+        mkpt('46.5017784 15.5537548').longitude == GPXTrackPoint(46.5017784, 15.5537548).longitude
+
     import sys
     print(sys.argv)
     ta = GPXTrackPoint(46.533183, 15.628635)
