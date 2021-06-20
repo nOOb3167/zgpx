@@ -1,7 +1,10 @@
 from pathlib import Path
+from typing import Callable, TypeVar
+
+from gpxpy.gpx import GPXWaypoint
 from zgpx.eform import eform, PriPage
-from zgpx.util import n_formfeed
-from zgpx.ptutil import chk_waypoints, chk_waypoints_insert_inplace, csv_waypoints, pnt_filter_closer_than
+from zgpx.util import ROUND_DMS_SD_FN_CUT, n_formfeed
+from zgpx.ptutil import Pos, SYM_DIAMOND, chk_waypoints, chk_waypoints_insert_inplace, csv_waypoints, pnt_filter_closer_than, vec_t
 
 import gpxpy
 
@@ -106,7 +109,25 @@ def n7():
         f2.write(pp.output())
 
 def n8():
-    print('n8')
+    with open(root / 'Slovenska planinska pot_mapzs.gpx', encoding='UTF-8') as f:
+        gp2 = gpxpy.parse(f)
+        gp2.waypoints.extend(csv_waypoints(root / 'z0_koce.csv'))
+
+        def way_fact():
+            seq = -1
+            def _(p, v) -> Callable[[Pos, vec_t], TypeVar('T')]:
+                nonlocal seq
+                seq = seq + 1
+                if seq % 3 == 0:
+                    return GPXWaypoint(v[0], v[1], symbol=SYM_DIAMOND, name=f'{int(seq // 3)}', type='checkpoint')
+                else:
+                    return GPXWaypoint(v[0], v[1], symbol=SYM_DIAMOND, type='checkpoint')
+            return _
+        gp2.waypoints.extend(chk_waypoints(gp2, want_dist_m=1000/3.0, way_fact=way_fact()))
+
+        xm2 = gp2.to_xml()
+        with open(root / 'zzz_generated_8.gpx', 'w', encoding='UTF-8') as f2:
+            f2.write(xm2)
 
 if __name__ == '__main__':
     from argparse import ArgumentParser

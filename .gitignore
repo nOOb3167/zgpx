@@ -3,4 +3,4 @@
 __pycache__
 /misc
 /.venv
-/.vscode/launch.json
+/.vscode

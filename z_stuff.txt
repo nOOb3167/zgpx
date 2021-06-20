@@ -4,3 +4,6 @@ https://www.openstreetmap.org/browse/relation/6443086
 http://overpass-turbo.eu/
 
 vscode Pylance extension
+
+https://www.gpsvisualizer.com/tutorials/waypoints.html#symbols
+    GPX sym tag values (circle, googlemini, ...) / icons parsed by GPSvisualizer Leaflet map format

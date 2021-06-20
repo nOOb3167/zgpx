@@ -6,6 +6,10 @@ from math import inf, isclose, sqrt
 from typing import Callable, List, Tuple, TypeVar
 from zgpx.util import DictReader, vec_t, WANT_DIST_M_DEFAULT, wpt_t, wpt_t_default
 
+# https://www.gpsvisualizer.com/tutorials/waypoints.html#symbols
+SYM_CIRCLE = 'circle'
+SYM_DIAMOND = 'diamond'
+
 '''
 https://github.com/stesalati/TrackAnalyser/blob/master/bombo.py#L1047
     dms2dd / dd2dms
@@ -177,9 +181,9 @@ def chk_waypoints_insert_inplace(gp2: GPX, wpname: str, /, want_dist_m=WANT_DIST
 def pnt_filter_closer_than(a: List[wpt_t], cmp: List[wpt_t], len_):
     return [x for x in a if not any([x.distance_2d(y) < len_ for y in cmp])]
 
-def csv_waypoints(p: Path, t='trasa'):
+def csv_waypoints(p: Path, t='trasa', sym=SYM_CIRCLE):
     with open(p, encoding='UTF-8') as f:
-        return [GPXWaypoint(latitude=float(r['latitude']), longitude=float(r['longitude']), name=r['name'], symbol='http://maps.me/placemarks/placemark-red.png', type=t) for r in DictReader(f)]
+        return [GPXWaypoint(latitude=float(r['latitude']), longitude=float(r['longitude']), name=r['name'], symbol=sym, type=t) for r in DictReader(f)]
 
 if __name__ == '__main__':
     assert mkpt('46.5017784 15.5537548').latitude == GPXTrackPoint(46.5017784, 15.5537548).latitude and \
