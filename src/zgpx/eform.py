@@ -1,22 +1,22 @@
 from dataclasses import dataclass
-from gpxpy.gpx import GPX, GPXTrackPoint
+from gpxpy.gpx import GPX, GPXTrackPoint, GPXWaypoint
 from math import ceil
-from typing import Callable, List
+from typing import Callable
 from zgpx.ptutil import chk_waypoints_insert_inplace, dd2dms, gpx_insert_lseg_closest_inplace, tra_seg, vec_isclose
 from zgpx.util import EQU_PNT_PNT_FN, WANT_DIST_M_DEFAULT, n_formfeed, ROUND_DMS_SD_FN_DEFAULT, wpt_t
 
 @dataclass
 class E():
     pnt: wpt_t
-    brk: List[wpt_t]
-    tra: List[wpt_t]
+    brk: list[wpt_t]
+    tra: list[wpt_t]
 
-def eform_pre(gp2: GPX, kwp: List[wpt_t], want_dist_m=WANT_DIST_M_DEFAULT):
+def eform_pre(gp2: GPX, kwp: list[wpt_t], want_dist_m=WANT_DIST_M_DEFAULT):
     chk_waypoints_insert_inplace(gp2, 'dummy_breaker', want_dist_m=want_dist_m)
     for k in kwp:
         gpx_insert_lseg_closest_inplace(gp2, GPXTrackPoint(k.latitude, k.longitude, name='dummy_koca'))
 
-def eform(gp2: GPX, kwp: List[wpt_t], want_dist_m=WANT_DIST_M_DEFAULT):
+def eform(gp2: GPX, kwp: list[wpt_t], want_dist_m=WANT_DIST_M_DEFAULT):
     eform_pre(gp2, kwp, want_dist_m)
 
     def clst(a):
@@ -26,7 +26,7 @@ def eform(gp2: GPX, kwp: List[wpt_t], want_dist_m=WANT_DIST_M_DEFAULT):
                 return wp
         raise NotImplementedError()
 
-    lstn: List[E] = []
+    lstn: list[E] = []
 
     for t in gp2.tracks:
         s = tra_seg(t)
@@ -51,7 +51,7 @@ class PriPage():
     CP_SUFFIX = ''
     AT_SUFFIX = ''
 
-    d: List[str]
+    d: list[str]
     ncol: int
     nrow: int
     colsep: str
@@ -103,7 +103,7 @@ class PriPage():
     def fmt_wpt(self, wpt: wpt_t):
         return f'{self.fmt_deg_dms(wpt.latitude)} {self.fmt_deg_dms(wpt.longitude)}'
     def fmt_cure(self, cure: E):
-        d: List[str] = []
+        d: list[str] = []
         for pnt in cure.tra:
             iscp = pnt.name == 'dummy_breaker'
             l = f'{self.fmt_wpt(pnt)}' + (self.CP_SUFFIX if iscp else '')
@@ -112,7 +112,7 @@ class PriPage():
         d.append(f'{self.fmt_wpt(cure.pnt)}' + self.AT_SUFFIX)
         d.append(f'{cure.pnt.name}')
         return d
-    def fmt_cure_thin_dbg(self, cure: E, cwps: List[E]):
+    def fmt_cure_thin_dbg(self, cure: E, cwps: list[E]):
         cwps_brk = [(brk, i1, i2) for i1, cwp in enumerate(cwps) for i2, brk in enumerate(cwp.brk)]
         for pnt in cure.brk:
             dd = self.fmt_wpt(pnt)
@@ -121,8 +121,8 @@ class PriPage():
             if isthin:
                 z = list(filter(lambda x: EQU_PNT_PNT_FN(pnt, x[0]), cwps_brk))
         return []
-    def fmt_cure_thin(self, cure: E, cwps: List[E]):
-        d: List[str] = []
+    def fmt_cure_thin(self, cure: E, cwps: list[E]):
+        d: list[str] = []
         cwps_brk = [brk for cwp in cwps for brk in cwp.brk]
         for pnt in cure.brk:
             dd = self.fmt_wpt(pnt)
@@ -136,5 +136,10 @@ class PriPage():
         return d
     def add_cure(self, cure: E):
         self.d.extend(self.fmt_cure(cure))
-    def add_cure_thin(self, cure: E, cwps: List[E]):
+    def add_cure_thin(self, cure: E, cwps: list[E]):
         self.d.extend(self.fmt_cure_thin(cure, cwps))
+    def add_cure_lwpt(self, lwpt: list[GPXWaypoint]):
+        d: list[str] = []
+        for wpt in lwpt:
+            d.append(f'{self.fmt_wpt(wpt)}' + (' ' + (wpt.name or '')))
+        self.d.extend(d)

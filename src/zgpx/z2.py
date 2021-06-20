@@ -2,7 +2,7 @@ from pathlib import Path
 from typing import Callable, TypeVar
 
 from gpxpy.gpx import GPXWaypoint
-from zgpx.eform import eform, PriPage
+from zgpx.eform import E, eform, PriPage
 from zgpx.util import ROUND_DMS_SD_FN_CUT, n_formfeed
 from zgpx.ptutil import Pos, SYM_DIAMOND, chk_waypoints, chk_waypoints_insert_inplace, csv_waypoints, pnt_filter_closer_than, vec_t
 
@@ -123,11 +123,19 @@ def n8():
                 else:
                     return GPXWaypoint(v[0], v[1], symbol=SYM_DIAMOND, type='checkpoint')
             return _
-        gp2.waypoints.extend(chk_waypoints(gp2, want_dist_m=1000/3.0, way_fact=way_fact()))
+
+        cwpt = chk_waypoints(gp2, want_dist_m=1000/3.0, way_fact=way_fact())
+        gp2.waypoints.extend(cwpt)
+
+        pp = PriPage(cponly=True, round_dms_sd_fn=ROUND_DMS_SD_FN_CUT, ncol=4, nrow=72)
+        pp.add_cure_lwpt(cwpt)
 
         xm2 = gp2.to_xml()
         with open(root / 'zzz_generated_8.gpx', 'w', encoding='UTF-8') as f2:
             f2.write(xm2)
+
+        with open(root / 'zzz_generated_8.txt', 'w', encoding='UTF-8') as f2:
+            f2.write(pp.output())
 
 if __name__ == '__main__':
     from argparse import ArgumentParser
